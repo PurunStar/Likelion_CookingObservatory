@@ -183,6 +183,7 @@ background: linear-gradient(to bottom, #0f0c29, #302b63, #3c395f,  #471e4b); /* 
         font-weight: 300;
         padding-top: 50px;
         padding-left: 50px;
+        padding-bottom: 20px;
         margin-bottom: 50px;
         background-color: rgba(160, 91, 160);
         /* animation: moveToLeft 2s; */
