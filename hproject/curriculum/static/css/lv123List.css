@@ -1,0 +1,121 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    }
+
+html {
+    background: url('/static/images/IMG_0602.PNG') no-repeat center fixed;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover;
+}
+
+
+/* header */
+
+header {
+    font-size: 80px;
+    margin: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+header > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+h1 {
+    /* font-family: 'Lobster', cursive; */
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 40px;
+    color: rgb(255, 249, 195);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 20px;
+    color: rgb(255, 249, 195);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+/* image */
+
+.container {
+    position: relative;
+    width: 200px; height: 200px;
+    display: inline-block;
+}
+
+.image {
+    width: 200px; height: 200px;
+    display: block;
+    /* background-color: rgb(214, 132, 132); */
+}
+
+.overlay {
+    position: absolute;
+    transition: all 0.3s ease;
+    opacity: 0;
+    background-color: #eee;
+}
+
+.container:hover .overlay{
+    opacity: 1;
+}
+
+.text {
+    color: #fff;
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+.overlayLeft {
+    height: 100%; width: 0; top: 0; left: 0;
+    background-color: rgba(252, 236, 92, 0.5);
+}
+
+.overlayRight {
+    height: 100%; width: 0; top: 0; right: 0;
+    background-color: rgba(252, 164, 92, 0.5);
+
+
+}
+.container:hover .overlayLeft, .container:hover .overlayRight{
+    width: 100%;
+}
+
+.overlayTop {
+    width: 100%; height: 0; top: 0; left: 0;
+    background-color: rgba(92, 228, 252, 0.5);
+}
+
+.overlayBottom {
+    width: 100%; height: 0; bottom: 0; right: 0;
+    background-color: rgba(183, 252, 92, 0.5);
+
+
+}
+.container:hover .overlayTop, .container:hover .overlayBottom{
+    height: 100%;
+}
+
+.overlayCross {
+    width: 0; height: 0; top: 0; left: 0;
+    background-color: rgba(252, 92, 92, 0.5);
+}
+.container:hover .overlayCross{
+    width: 100%; height: 100%;
+}
+
+.overlayFade {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background-color: rgba(252, 92, 145, 0.5);
+}
