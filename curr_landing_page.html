@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="./animate.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://kit.fontawesome.com/9279b2b68a.js"></script>
     <title>Baking Observatory</title>
     <script type="text/javascript" src="wow.min.js"></script>
     <script>
@@ -21,7 +22,7 @@
     <div class="container">
         <div class="banner">
             <h1>How to Make a <span> Muffins</span></h1>
-            <p>Let's Bake Together!
+            <p>Let's Bake Together!<br>
                 <br>ingredients<br>
                 <p class="ingredients">
                     1 egg<br>
@@ -48,9 +49,13 @@
             <!-- <h1 class="wow animated bounce delay-2s">How to Make a  Muffins</h1></div>
             <div class=" wow constellation animated fadeInUp delay-2s"> -->
         <h1 id="get-started" class="wow zoomIn" data-wow-delay="1.5s">How to Make a  Muffins</h1></div>
-        <div class=" wow fadeInUp constellation" style=" text-align: center;">
-            <img style="width: 480px; height:360px;     border: 10px solid rgba(255, 255, 255, 0.103);" src="https://cdn.brainpop.com/science/natureoftheuniverse/constellations/screenshot1.png" alt="">
-            </div>
+        <div id="dback" style="text-align: center;">
+            <img class= 'bbtt' src="./../pics/Photofox.png" alt="">
+        </div>
+        <!-- <div class=" wow fadeInUp constellation" style=" text-align: center;">
+            <p></p><img class= 'bbtt' style=" border: 10px solid rgba(255, 255, 255, 0.103);" src="./../pics/Photofox.png" alt="">
+            </p></div> -->
+            <!-- width: 480px; height:360px;  -->
             <div class="explain wow fadeIn" style="padding-bottom: 30px; margin-bottom: 200px;">
                         
                     <p style="padding: 20px 0px 0px 20px; "><span style="color: rgb(228, 240, 64);" >과제</span> : <span>*</span> 이 달린 과정을 찍어 포스팅 </p>
@@ -105,13 +110,17 @@
                             , about <span>30 min</span>utes.<br></p>
                         <br>
                             </div>
-                    </div>    <footer>
-        <p>푸터임. <br>
-        <br>
-        <br>
-        <br>
-        </p>
-    </footer>
+                    <div class="btn-wrapper">
+                        <button class="btn btn1" onclick = "location.href = '#' ">community</button>
+                        <button class="btn btn2" onclick = "location.href = '#' ">submit!</button>
+                    </div>
+                    </div>
+        <footer>
+            <div style="height: 200px;">푸터-본문</div>
+            <div><a href='#get-started' class="top">
+                <i class="fas fa-arrow-up"></i>
+            </a></div>
+        </footer>
                     
         </div>
     </div>
