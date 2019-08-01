@@ -1,0 +1,394 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="urtf-8" />
+    <title>Baking</title>
+    <!-- 익스플로어에서는 가장 최상위 버젼으로 렌더링 -->
+    <!-- 만약 크롬이 깔려있다면 크론 엔진을 사용한다 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <!-- 사이트 설명 -->
+    <meta name="description" content="Waxom free psd template">
+    <!-- 검색 키워드 -->
+    <meta name="keywords" content="free, psd, template, responsive">
+    <meta name="robots" content="index, follow">
+    <!-- viewport 크기는 다양한 사용자 디바이스의 크기에 맞추되 초기 비율은 100% -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+        integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous">
+    </script>
+
+    <!-- 폰트구현 - WebFont.load 방식  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Montserrat:300,400,700', 'Raleway:300,400,500,600,700,800']
+            }
+        });
+    </script>
+    <!-- cycle2-demos-gettingStarted -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://malsup.github.com/jquery.cycle2.js"></script>
+    <!-- cycle2-demos-Carousel-->
+    <script src="http://malsup.github.io/jquery.cycle2.carousel.js"></script>
+    <script>
+        $.fn.cycle.defaults.autoSelector = '.cycle-slideshow';
+    </script>
+    <!-- home = default ????? -->
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <header>
+        <!-- clearfix!!! -->
+        <div class="container clearfix">
+            <h1 class="logo"><a href=""></a></h1>
+            <nav class="clearfix">
+                <ul class="main-menu">
+                    <!-- <li><a href="#">홈</a></li> -->
+                    <!-- 로그인o -->
+                    {% if user.is_authenticated %}
+                    <li><a href="#">{{user.username}}</a>
+                    <li><a href="" class="icon"><i class="fas fa-user"></i></a></li>
+                    <li><a href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
+                    <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                        {% csrf_token %} <input type="hidden" />
+                    </form>
+                    <!-- 로그인x-->
+                    {% else %}
+                    <li><a href="{% url 'accounts:login' %}">로그인</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">회원가입</a></li>
+                    {%endif%}
+
+                </ul>
+                <!-- <ul class="top-icons">
+                                    <li><a href="" class="icon"><i class="fas fa-user"></i></a></li>
+                                    <li><a href="" class="icon"><i class="fas fa-shopping-bag"></i></a></li>
+                                </ul> -->
+            </nav>
+        </div>
+    </header>
+    <div class="slider">
+        <!-- cycle2에서 가져온 slide -->
+        <ul class="slider-list cycle-slideshow " data-cycle-fx="scrollHorz" data-cycle-timeout="0"
+            data-cycle-slides="> li" data-cycle-prev=".slider .prev" data-cycle-next=".slider .next"
+            data-cycle-pager=".pager">
+
+            <li class="slide1">
+                <div class="contents">
+                    <h3>Baking Baking Baking</h3>
+                    <h2>Baking Baking Baking</h2>
+                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
+                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
+                    <a href="" class="btn">Get Started</a>
+                </div>
+            </li>
+            <li class="slide2">
+                <div class="contents">
+                    <h3>Baking Baking Baking</h3>
+                    <h2>Baking Baking Baking</h2>
+                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
+                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
+                    <a href="" class="btn">Get Started</a>
+                </div>
+            </li>
+            <li class="slide3">
+                <div class="contents">
+                    <h3>Baking Baking Baking</h3>
+                    <h2>Baking Baking Baking</h2>
+                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
+                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
+                    <a href="" class="btn">Get Started</a>
+                </div>
+            </li>
+        </ul>
+        <!-- 슬라이드 좌우 버튼 -->
+        <p class="controls">
+            <a href="" class="prev"></a>
+            <a href="" class="next"></a>
+        </p>
+        <p class="pager clearfix">
+
+        </p>
+    </div>
+    <main class="content">
+        <section class="services container clearfix">
+            <div class="service_item">
+                <a href="{% url 'intro' %}">
+                    <span class="icon"><i class="fas fa-pencil-alt"></i></span>
+                    <h4>사이트 소개</h4>
+                    <!-- <p>Nam liber tempor Nam liber tempor Nam liber tempor Nam liber tempor</p> -->
+                    <span class="status"></span>
+                </a>
+            </div>
+            <div class="service_item">
+                <a href="">
+                    <span class="icon"><i class="fas fa-bullhorn"></i></i></span>
+                    <h4>공지사항</h4>
+                    <span class="status"></span>
+                </a>
+            </div>
+            <div class="service_item">
+                <a href="{% url 'landing_page' %}">
+                    <span class="icon"><i class="fas fa-cog"></i></i></span>
+                    <h4>커리큘럼</h4>
+                    <span class="status"></span>
+                </a>
+            </div>
+            <div class="service_item">
+                <a href="{% url 'photo:list' %}">
+                    <span class="icon"><i class="far fa-clipboard"></i></span>
+                    <h4>게시판</h4>
+                    <span class="status"></span>
+                </a>
+            </div>
+        </section>
+        <section class="text_boxes">
+            <div class="container clearfix">
+                <div class="box_contents">
+                    <h4><span>Baking</span>Baking Baking Baking Baking</h4>
+                    <p>Baking Baking Baking</p>
+                </div>
+                <a href="" class="btn">PURCHASE NOW</a>
+            </div>
+        </section>
+        <!-- text_box -->
+        <scetion class="latest_projects">
+            <div class="container">
+                <h3 class="content_tt">Baking</h3>
+                <p class="content_dec">Nam liber tempor Nam liber tempor Nam liber tempor Nam liber tempor Nam liber
+                    tempor Nam liber tempor Nam liber tempor Nam liber tempor</p>
+
+                <div class="projects_wrap ">
+
+                    <input type="radio" value="all" id="fillter_all" name="filter" checked />
+                    <label for="fillter_all">ALL</label>
+
+                    <input type="radio" value="Web Design" id="fillter_web" name="filter" />
+                    <label for="fillter_web">Web Design</label>
+
+                    <input type="radio" value="Mobile App" id="fillter_mobile" name="filter" />
+                    <label for="fillter_mobile">Mobile App</label>
+
+                    <input type="radio" value="Illustration" id="fillter_illust" name="filter" />
+                    <label for="fillter_illust">Illustration</label>
+
+                    <input type="radio" value="Photography" id="fillter_photography" name="filter" />
+                    <label for="fillter_photography">Photography</label>
+
+                    <ul class="project_list clearfix">
+                        <!-- li 하나의 구조 = 이미지 + 설명 -->
+                        <li class="web">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img class="img" src="{% static 'images/roll-4284019_1920.jpg' %}"
+                                    alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- 컨텐츠 내용 삭제 -->
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                        <li class="mobile">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img src="{% static 'images/project_02.jpg' %}" alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                        <li class="photo">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img src="{% static 'images/project_03.jpg' %}" alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                        <li class="illust">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img src="{% static 'images/project_04.jpg' %}" alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                        <li class="web">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img src="{% static 'images/project_05.jpg' %}" alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                        <li class="web">
+                            <div class="imgWrap">
+                                <!-- 이미지는 가만히.. -->
+                                <img src="{% static 'images/project_06.jpg' %}" alt="project_01_image">
+                                <!-- 이미지에 마우스를 올릴 때 내용 -->
+                                <div class="hover_contents">
+                                    <a href=""><i class="fas fa-link"></i></a>
+                                    <a href=""><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <!-- <div class="contents">
+                                <h4>Quam Nutamus Farum</h4>
+                                <p>Graphic Design, Mock-up</p>
+                            </div> -->
+                        </li>
+                    </ul>
+                    <p class="load_more">
+                        <!-- <a href="" class="btn">LOAD MORE</a> -->
+                    </p>
+                </div>
+            </div>
+        </scetion>
+        <!-- latest_projects -->
+    </main>
+    <!-- <footer>
+        <div class="footer_top">
+            <div class="container clearfix">
+                <div class="col-one-forth">
+                    <h2 class="footer_logo"><a href="">footerlogo</a></h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae atque enim expedita nulla
+                        accusamus dolores nihil temporibus assumenda, nobis maiores officia a aut rerum, quo dolore,
+                        soluta at dolor reiciendis.
+                    </p>
+
+                </div>
+                <div class="col-one-forth">
+                    <h3>Recent Posts</h3>
+                    <ul class="footer_list">
+                        <li><span class="post_date">September 8 2015</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consecaaaaetur adipisicing elit.
+                            </p>
+                        </li>
+                        <li><span class="post_date">September 8 2015</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </li>
+                        <li><span class="post_date">September 8 2015</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-one-forth">
+                    <h3>Our Twitter</h3>
+                    <ul class="footer_list">
+                        <li>
+                            <p>
+                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
+                            </p>
+                            <span class="post_date">3mins 8 2015</span>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
+                            </p>
+                            <span class="post_date">3mins 8 2015</span>
+                        </li>
+                        <li>
+                            <p>
+                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
+                            </p>
+                            <span class="post_date">3mins 8 2015</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-one-forth">
+                    <h3>Dribble Widdget</h3>
+                    <ul class="dribble">
+                        <li><a href=""><img src="{% static 'images/dribble_01.jpg' %}" alt="dribble 01"></a></li>
+                        <li><a href=""><img src="{% static 'images/dribble_02.jpg' %}" alt="dribble 02"></a></li>
+                        <li><a href=""><img src="{% static 'images/dribble_03.jpg' %}" alt="dribble 03"></a></li>
+                        <li><a href=""><img src="{% static 'images/dribble_04.jpg' %}" alt="dribble 04"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="footer_bottom">
+            <div class="item">
+                <img src='#' alt="사진">
+            </div>
+            <div class="item">
+                <pre>
+                    <p>(주)팀이름 | 대표이사들 : 강상혁 김은영 마서연 박효빈 한지원 |</p>
+                    <p>주소 : 광주광역시 동구 필문대로 309 | 사업자등록번호:123456789 | 통신판매신고 : 132광주4752 |</p>
+                    <h6>copyright(c) 2019 all right reserved</h6>
+                </pre>
+            </div>
+            <div class="item">
+                <div class='item_b'> BO SNS</div>
+                <p>유튜브 | 블로그 | 인스타그램</p>
+                <div class='item_b'>고객센터</div>
+                <p>평일 : 9:00-18:30</p>   
+                <div class='item_b'>1:1상담</div>
+                <p>누가할래?난 안해</p>
+            </div>
+        </div>
+<!-- 
+        <div class="footer_bottom">
+            <div class="container clearfix">
+                <div class="copy">
+                    <p>
+                        Copyright &copy; 2018 <span>Baking</span> <span class="devider">&#124;</span> <a
+                            href="">Privacy</a> <span class="devider">&#124;</span>
+                        <a href="">FAQ</a> <span class="devider">&#124;</span> <a href="">Support</a>
+                    </p>
+                </div>
+                <div class="designer">
+                    <p>
+                        Designed by <a href="">ThemeFire</a> <span class="devider">&#124;</span> Only on <a
+                            href="">Envato Market</a>
+                    </p>
+                </div>
+            </div>
+        </div> -->
+    </footer>
+</body>
+
+</html>

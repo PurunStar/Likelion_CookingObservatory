@@ -1,0 +1,95 @@
+    /* reset + 디자인에서 공통으로 쓰는것 */
+    /* a태그 박스 container 넓이 */
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        text-decoration: none;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    .clearfix::after{content:''; display: block; clear: both;}
+    img{vertical-align: top;}
+
+    /* TYPOGRAPHY */
+    *{
+        -webkit-font-smoothing :antialiased;
+    }
+    body{
+        /* fontsize/lineheight */
+        /* 기본 폰트의 크기는 16px, 기본 line-height는 28px 감안해서 나중에 사용  */
+        font : 16px/28px "Monserrat", sans-serfit;
+    }
+    h1,h2,h3,h4,h5,h6{
+        font-family: "Raleway", sans-serif;
+    }
+    /* content_tt, contetn_dec 공통으로 사용하는 부분 */
+    .content_tt{
+        font-size: 30px ; color: #555 ; font-weight: 600; text-align: center;
+    }
+    .content_dec{
+        font-size: 16px; font-weight: 300; color: #8c8c8c; width: 65%; text-align: center;
+        /* width 값을 가지므로 margin으로 중앙 정렬 */
+        margin: 23px auto 33px;
+    }
+
+    /* LAYOUT */
+    .container{
+        width: 1170px; margin: 0 auto;
+    }
+    /* COMMON ELEMONTS */
+    .primary_color{
+
+    }
+    .btn{
+        background: #998675;
+        padding: 0 29px;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        border-radius: 3px;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        box-shadow: inset 0 -3px #736357;
+    }
+

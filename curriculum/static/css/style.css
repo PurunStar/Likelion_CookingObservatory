@@ -1,0 +1,131 @@
+/* related to landing_page */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(53,82,66,0.5), rgba(47, 80, 63, 0.6)), 
+    url('../pics/christmas-tree-1764223_1920.jpg') center no-repeat; /*eg img */
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(150, 123, 88, 0.5), rgba(160, 91, 160, 0.6)), 
+    url('https://cdn.pixabay.com/photo/2017/11/15/11/52/muffins-2951757_1280.jpg') center no-repeat; /*eg img */
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner {
+    width: 100%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 80px;
+    color: #ddd;
+    font-weight: 300;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    animation: moveToLeft 2s;
+}
+
+.banner span {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
+
+.banner p {
+    font-size: 30px;
+    font-weight: 300;
+    color: #eee;
+    margin-bottom: 20px;
+    animation: moveToRight 2s;
+}
+
+p.copyright {
+    font-size: 20px;
+    font-weight: 300;
+    color: #eee;
+    margin-bottom: 20px;
+}
+
+.banner button {
+    width: 180px;
+    padding: 12px;
+    margin: 20px;
+    border: 2px solid #eee;
+    border-radius: 50px;
+    font-size: 18px;
+    outline: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-left {
+    background-color: transparent;
+    color: #eee;
+    animation-name: animateBtn;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-fill-mode: backwards;
+}
+
+.btn-right {
+    background-color: #eee;
+    color: #444;
+    animation-name: animateBtn;
+    animation-duration: 1s;
+    animation-delay: 2.3s;
+    animation-fill-mode: backwards;
+
+}
+
+@keyframes moveToLeft {
+    0% {
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes moveToRight {
+    0% {
+        transform: translateX(-120px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes animateBtn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.banner .ingredients{
+    font-size: 15px;
+}

@@ -1,0 +1,69 @@
+body{ padding: 50px; position: relative;}
+
+/* 로그인창 기본 옵션 */
+.login{position: absolute; 
+    width: 329px;
+    height: 194px;
+    left: calc(50% - 164px);
+    margin-top: 194px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.login .login_top{position: relative; width: inherit;}
+.login .login_top li label{
+    color: #464646; font-size: 12px; 
+    font-family: dotum; font-weight: bold;
+    width: 63px; display: inline-block;
+}
+
+.login .login_top li{
+    padding-bottom: 6px;
+}
+
+.login .login_top li input[type="text"],
+.login .login_top li input[type="password"]{
+    width: 134px; height: 29px;
+    padding: 0 0 0 10px;
+    border: 1px solid #d9d9d9;
+}
+
+.login .login_top .log_btn{
+    position: absolute;
+    right: 0; top: 0;
+}
+/* 로그인 버튼 */
+.login .login_top li a{
+    width: 109px; height: 67px;
+    background: #829c2c;
+    display: block;
+    font-size: 17px; color: #fff; text-align: center;
+    line-height: 69px; font-weight: bold;
+    border: 1px #778f28;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.login .login_top .save{
+    padding: 0 0 0 59px;
+}
+.login .login_top .save label{
+    font-weight: normal;
+    width: auto;
+    margin-bottom: 2px;
+}
+
+.login .login_btm{
+    padding: 31px 0 0 59px;
+}
+.login .login_btm li{
+    color: #383d41; font-size: 12px;
+    font-family: dotum;
+}
+.login .login_btm li a{
+    font-size: 12px;
+    font-family: dotum;
+    font-weight: bold; color: #829c2c;
+    margin-left: 10px;
+}

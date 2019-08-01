@@ -1,0 +1,8 @@
+<!-- 모든 게시글 리스트에서 
+    게시글의 글쓴이와 로그인유저가 같은지 비교 -->
+    {% for object in object_list %}
+    {% if object.author == user %}
+    <img src="{{object.image.url}}" alt="image">
+    <!-- object.image_thumbnail.url  -->
+    {% endif %}
+    {% endfor %}

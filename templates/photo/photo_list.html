@@ -1,0 +1,44 @@
+
+
+<!-- 3 4 줄은 뭘까요??? -->
+{% block title %}
+{% endblock %}
+
+{% block content %}
+{% for object in object_list %}
+    <!-- <div class="content_container"> -->
+        <div class="card">
+            <div class="card_header">
+                <h3>{{object.author}}</h3>
+                <h3>{{user.username}}</h3>
+            </div>
+            <!-- <img src="images/project_01.jpg" width="350px" alt="인스타 이미지"> -->
+            <img src=" {{ object.image.url }}"  alt="사진">
+            <div class="card_body">
+                <p>{{ object.text }}</p>
+            </div>
+            <ul class="list">
+                <li class="list_item"><a href="{%url 'photo:like' object.id %}"
+                        class="btn_like {%if user in object.like.all %} active {%endif%} ">좋아요</a>
+                        <!-- 좋아요 수 출력 -->
+                    {%if object.like.all.count%}
+                    <span>{{object.like.all.count}}</span>
+                    {%endif%}   
+                </li>
+                <li>생성일 : {{ object.created }}</li>
+                <!-- <li>수정일 : {{ object.updated }}</li> -->
+            </ul>
+            <div class="card_body">
+                <a href="{% url 'photo:detail' object.id %}">댓글달기</a>
+
+                <!-- 권한 확인 -->
+                {% if user == object.author %}
+                <a href="{% url 'photo:update' object.id %}">수정하기</a>
+                <a href="{% url 'photo:delete' object.id %}">삭제하기</a>
+                {% endif %}
+            </div>
+        </div>
+    <!-- </div> -->
+    
+    {% endfor %}
+    {% endblock %}

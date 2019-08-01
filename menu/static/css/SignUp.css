@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%
+}
+
+.signup_container{
+    width: 872px;
+    padding: 20px 10px;
+    margin: 40px auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+.signup_container .agreement{
+    width: 800px;
+    margin: 1em auto;
+}
+/* 약관 동의 */
+.signup_container .confirm label{
+    font-size: 12px;
+}
+/* 가입 약관 */
+.signup_container .agreement .text{
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    overflow: auto;
+    margin: 12px 0;
+}
+
+.signup_container h2{
+    padding-left: 40px;
+}
+.signup_container .control{
+    margin-bottom: 20px;
+    width: 810px;
+}
+
+/* input창 옵션 */
+.signup_container .control input[type="text"],
+input[type="password"]
+{
+    display: inline-block;
+    width: 290px;
+    height: 10px;
+    padding: 10px;
+    background: #f6f6f6;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,.1);
+    border-radius: 4px;
+}
+
+.signup_container .control label{
+    width: 150px;
+    text-align: right;
+    display: inline-block;
+    padding: 10px 10px 0 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+/* 필수 입력 사항 표시 */
+.signup_container .control span{
+    color: red;
+}
+/* 비밀번호 6자 이상 */
+.signup_container .control .check{
+    display: inline-block;
+    color: #595959;
+    font-size: 12px;
+    margin: 0 0 0 167px;
+}
+
+.signup_container .btn{
+    text-align: right;
+}
+
+.signup_container .btn .btn_container{
+    display: inline-block;
+    padding: 0 10px 0 0;
+}
+
+.signup_container .btn .btn_container [type="submit"]{
+    border-radius: 4px;
+}
+
+.signup_container select{
+    width: 312px;
+    height: 32px;
+    background: #f6f6f6;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 2px rgba(0,0,0,.1);
+    border-radius: 4px;
+    margin: 0 20px 20px 0;
+    padding: 0 0 0 8px;
+}
+.signup_container #find_accounts_A{
+    margin-left: 166px;
+}
