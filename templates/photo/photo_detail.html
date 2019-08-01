@@ -89,19 +89,19 @@
                         <p><img src="{{ object.image.url }}" alt="post_image">
                         </p>
                         <p>{{ object.text }}</p>
-                        <!-- 좋아요 버튼 -->
-                        <div class="like">
-                            <a href="{%url 'photo:like' object.id%}">
-                                <div class="btn_like {%if user in object.like.all%} active {%endif%}">
-                                    좋아요
-                                </div>
-                            </a>
-                            {%if object.like.all.count == 0%}
-                            <b>0</b>
-                            {%elif object.like.all.count%}
-                            <b>{{object.like.all.count}}</b>
-                            {%endif%}
-                        </div>
+                    </div>
+                    <!-- 좋아요 버튼 -->
+                    <div class="like">
+                        <a href="{%url 'photo:like' object.id%}">
+                            <div class="btn_like {%if user in object.like.all%} active {%endif%}">
+                                좋아요
+                            </div>
+                        </a>
+                        {%if object.like.all.count == 0%}
+                        <b>0</b>
+                        {%elif object.like.all.count%}
+                        <b>{{object.like.all.count}}</b>
+                        {%endif%}
                     </div>
                     <!-- 댓글 -->
                     <div class="comment_area">
@@ -121,20 +121,19 @@
                                     <!-- 댓글 글쓴이라면 수정 삭제 -->
                                     {% if user == comment.user %}
                                     <div class="hover_nav">
-                                        <a href="">수정</a>
+                                        <a href="{% url 'photo:comment_edit' comment.id %}">수정</a>
+                                        <a href="#">댓글</a>
                                         <a href="#" onclick="document.getElementById('delete').submit();">삭제</a>
                                         <form method="POST" action="{%url 'photo:comment_delete' comment.id %}"
-                                        id="delete">
-                                        {%csrf_token%}
+                                            id="delete">
+                                            {%csrf_token%}
                                         </form>
-                                        <a href="#">댓글</a>
                                     </div>
                                     {%else%}
                                     <div class="hover_nav">
                                         <a href="#">댓글</a>
                                     </div>
                                     {%endif%}
-
                                     <div class="comment">
                                         <p>{{comment.body}}</p>
                                     </div>
@@ -156,7 +155,6 @@
                 </div>
             </div>
         </div>
-
         <div id="footer_wrap">
             <div class="footer_container">
                 footer_container
@@ -164,8 +162,6 @@
         </div>
     </div>
     </div>
-
-
 
 </body>
 

@@ -25,6 +25,13 @@ class Photo(models.Model):
     def __str__(self):
         return  self.text
 
+    def summary(self) : 
+        return self.text[0:17]
+
+    def len(self) :
+        text_len = len(self.text)
+        return text_len
+
     class Meta:
         ordering = ['-created']
 

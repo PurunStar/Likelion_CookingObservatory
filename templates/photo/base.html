@@ -47,19 +47,6 @@
             </div>
         </div>
         <div id="content_wrap">
-            <!-- 게시판 키워드 선택 -->
-            <!-- <div class="banner">
-                <input type="radio" value="all" id="filtter_all" name="filter" checked>
-                <label for="filtter_all">ALL</label>
-                <input type="radio" value="Popular_Posts" id="Popular_Posts" name="filter">
-                <label for="Popular_Posts">인기글</label>
-                <input type="radio" value="Recipe" id="Recipe" name="filter">
-                <label for="Recipe">레시피</label>
-                <input type="radio" value="free" id="free" name="filter">
-                <label for="free">자유</label>
-                <input type="radio" value="review" id="review" name="filter">
-                <label for="review">리뷰</label>
-            </div> -->
             <div class="content_container">
                 {% for object in object_list %}
                 <!-- <div class="content_container"> -->
@@ -81,7 +68,12 @@
                         </div>
                     </div>
                     <div class="card_body">
-                        <p>{{ object.text }}</p>
+                        <p>{{ object.summary }}
+                            <!-- 문자열 길이 -->
+                            {% if object.len > 17 %}
+                            <a href="{% url 'photo:detail' object.id %}">..more</a>
+                            {% endif %}
+                        </p>
                     </div>
                     <ul class="list">
                         <li class="list_item"><a href="{%url 'photo:like' object.id %}"
@@ -152,4 +144,5 @@
     </div>
     </div>
 </body>
+
 </html>

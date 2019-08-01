@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/comment_edit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <title>Board</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="hearder_wrap">
+            <div class="hearder_container">
+                <div class="logo">
+                    <a href=""></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a class="" href="{% url 'home' %}">Home</li>
+                        {%if user.is_authenticated%}
+                        <li><a href="#">{{user.username}}</a></li>
+                        <li><a href="{% url 'photo:create' %}">사진 올리기</a></li>
+                        <li><a href="{% url 'photo:mylist' %}">내사진 리스트</a></li>
+                        <li><a href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
+                        <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                            {% csrf_token %} <input type="hidden" />
+                        </form>
+                    </ul>
+
+                </nav>
+                {%else%}
+                <li><a href="{%url 'accounts:login'%}">Login</a></li>
+                <li><a href="{%url 'accounts:signup'%}">회원가입</a></li>
+                {%endif%}
+
+                {%if message %}
+                {%for message in messages %}
+                <p>{{message}}</p>
+                {%endfor%}
+                {%endif%}
+
+            </div>
+        </div>
+        <div id="content_wrap">
+            <div class="content_container">
+                <div class="comment_area">
+                    <div class="comment_box">
+                        <label for="">댓글 수정</label>
+                        <form id="edit" action="{% url 'photo:comment_edit' comment.id %}" method="POST">
+                            {% csrf_token %}
+                            <textarea rows=8 cols=40 name="body">{{comment.body}}</textarea>
+                            <div class="cmt_btn">
+                                <button onclick="goBack()">돌아가기</button>
+                                <input id="edit" type="submit" value="수정">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_wrap">
+            <div class="footer_container">
+                footer_container
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

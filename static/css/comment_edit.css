@@ -1,0 +1,176 @@
+/* 이거 사용함 */
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: ivory;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+
+#hearder_wrap {
+    width: 100%;
+}
+
+#content_wrap {
+    width: 100%;
+}
+
+#footer_wrap {
+    width: 100%;
+}
+
+.hearder_container {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto
+}
+
+.hearder_container .logo a{
+    width: 300px;
+    height: 230px;
+    background: url(../images/logo1.png) no-repeat;
+    background-size: 300px auto;
+    text-indent: -9999em;
+    display: block;
+    margin:  0 auto;
+}
+
+.hearder_container nav{
+    height: 50px;
+    text-align: center;
+}   
+
+.hearder_container li{
+    margin-right: 29px;
+    font-weight: bold;
+    display: inline;
+}
+
+.hearder_container li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.banner {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+.content_container {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto
+}
+
+.footer_container {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+/* 게시판 키워드 선택 옵션 */
+#content_wrap .banner {
+    text-align: center;
+}
+
+#content_wrap .banner input {
+    display: none;
+}
+
+#content_wrap .banner label {
+    padding: 0 18px;
+    margin: 30px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8c8c8c;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    display: inline-block;
+    background: #fff;
+}
+
+/* check된 라벨의 상태 변경 */
+/* checked 된 라벨의 형제중 첫번쨰 한가지만 적용 */
+#content_wrap .banner input:checked+label {
+    background: #998675;
+    color: #fff;
+}
+
+
+/* card */
+.content_container {}
+
+/* float:left로 인해 부모의 높이가 사라지는 현상 방지 */
+.content_container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.comment_area{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.comment_area .comment_box{
+    margin: 32px;
+    padding: 12px 20px;
+    background: #FCFCFC;
+    border: 1px solid #DDD;
+    border-bottom-color: #CCC;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px -1px rgba(0,0,0,.1);
+}
+
+.comment_box label{
+    font-weight: bold;
+    font-size: 13px;
+}
+.comment_box textarea{
+    margin: 5px 0;
+    resize: none;
+    width: 100%;
+    padding: 3px;
+    border-radius: 8px
+}
+
+.comment_box .cmt_btn{
+    float: right;
+}
+
+.comment_box::after{
+    content: '';
+    clear: both;
+    display: block
+}
+
+.comment_box .cmt_btn input ,
+.comment_box .cmt_btn button{
+    float: left;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(to bottom,#FFF 0%,#F3F3F3 100%);
+    border: 1px solid;
+    border-color: #CCC #C6C6C6 #C3C3C3 #CCC;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
+    box-shadow: inset 0 0 1px 1px #FFF, 0 1px 1px rgba(0,0,0,.1);
+    margin-right: 10px;
+}

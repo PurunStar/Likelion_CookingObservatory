@@ -6,6 +6,10 @@
 
 body {
     background: ivory;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
 }
 
 #wrap {

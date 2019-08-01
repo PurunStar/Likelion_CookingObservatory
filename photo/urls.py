@@ -22,6 +22,5 @@ urlpatterns = [
     #댓글    
     path('comment_add/<int:photo_id>' , views.comment_add, name='comment_add'),
     path('comment_delete/<int:comment_id>' , views.comment_delete, name='comment_delete'),
-    
-
+    path('comment_edit/<int:comment_id>' , views.comment_edit, name='comment_edit'),
 ]

@@ -146,27 +146,26 @@ def comment_add(request, photo_id) :
         return HttpResponse('잘못된 접근입니다.')
 
 
-# @login_required
-# def edit(request, photo_id) :
-#     post = get_object_or_404(Photo, pk=photo_id)
-#     if request.user == post.user :
-#         if request.method == "POST":
-#             # form = BlogForm(request.POST, instance=post)
-#             if form.is_valid():
-#                 post = form.save(commit=False)
-#                 post.date = timezone.now()
-#                 post.save()
-#                 return redirect('/blog/' + str(blog.id))    
-#         else:
-#             # form = BlogForm(instance=blog)
-#         return render(request, 'blog/edit.html',  {'form' : form , 'blog' : blog})
+def comment_edit(request, comment_id) : 
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if request.user == comment.user :
+        if request.method == "POST" :
+            comment.body = request.POST['body']
+            comment.save()
+            return redirect('/photo/detail/' + str(comment.post.id))
+        elif request.method == "GET" :
+            context ={
+                'comment' : comment
+            }  
+            return render(request, 'photo/comment_edit.html', context)
+    else :
+        return HttpResponse('잘못된 접근입니다.')
+
 
 def comment_delete(request, comment_id) :
     comment = get_object_or_404(Comment, pk = comment_id)
     if request.user == comment.user:
         if request.method == "POST": 
-            post_id = comment.post.id 
-            
             comment.delete()
-            return redirect('/photo/detail/' +str(post_id))
+            return redirect('/photo/detail/' +str(comment.post.id ))
     return HttpResponse('잘못된 접근입니다.')

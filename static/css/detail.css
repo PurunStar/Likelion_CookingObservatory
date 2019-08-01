@@ -7,6 +7,10 @@
 
 body {
     background: ivory;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
 }
 
 #wrap {
@@ -126,11 +130,16 @@ body {
 
 }
 
+.content_container .content_body .content_area{
+    white-space: pre-wrap;
+}
+
 .content_container .content_body .content_area img{
     /* img 중앙정렬 */
     /* display: block;
     margin: 0 auto; */
     padding: 20px 0;
+    margin: -20px 0 -80px 0;
     
 }
 
@@ -140,7 +149,7 @@ body {
     /* position: absolute;
     left: 50%; */
     text-align: center;
-    padding: 30px 0;
+    padding: 30px 0 60px 0;
 }
 .btn_like {
     display: inline-block;
@@ -250,4 +259,8 @@ body {
 }
 .comment_ul .comment_list:hover .hover_nav{
     visibility: visible;
+}
+.comment_ul .comment_list .comment {
+    white-space: pre-wrap;
+    margin: -40px 0 -50px 0;
 }
