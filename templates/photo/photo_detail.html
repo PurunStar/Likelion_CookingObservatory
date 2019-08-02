@@ -123,20 +123,20 @@
                                     <div class="hover_nav">
                                         <a href="{% url 'photo:comment_edit' comment.id %}">수정</a>
                                         <a href="#">댓글</a>
-                                        <a href="#" onclick="document.getElementById('delete').submit();">삭제</a>
-                                        <form method="POST" action="{%url 'photo:comment_delete' comment.id %}"
-                                            id="delete">
-                                            {%csrf_token%}
-                                        </form>
+                                        <a href="javascript:{var form=document.getElementById('delete');
+                                        form.action='/photo/comment_delete/{{comment.id}}';
+                                        form.submit();}">삭제</a>
+                                        <form id="delete" method="POST" action="">
+                                            {% csrf_token %}<input type="hidden"> </form>
                                     </div>
-                                    {%else%}
-                                    <div class="hover_nav">
-                                        <a href="#">댓글</a>
-                                    </div>
-                                    {%endif%}
-                                    <div class="comment">
-                                        <p>{{comment.body}}</p>
-                                    </div>
+                                        {%else%}
+                                        <div class="hover_nav">
+                                            <a href="#">댓글</a>
+                                        </div>
+                                        {%endif%}
+                                        <div class="comment">
+                                            <p>{{comment.body}}</p>
+                                        </div>
                                 </li>
                                 {% endfor %}
                             </ul>

@@ -44,7 +44,6 @@ class Comment(models.Model) :
     body = models.CharField(max_length=500)
     date = models.DateTimeField('date published')
     
-
     def __str__(self) :
         return self.body
 
