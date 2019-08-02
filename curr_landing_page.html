@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="star.css">
     <!-- <link rel="stylesheet" href="./animate.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://kit.fontawesome.com/9279b2b68a.js"></script>
@@ -17,11 +18,19 @@
     </script>
 </head>
 <body>
+
+        <section class="wrapper">
+                <div id="stars"></div>
+                <div id="stars2"></div>
+                <div id="stars3"></div>
+            </section>
+            <!-- 여기 페이지는 별 좌표의 최대 높이값보다 커서 푸터 윗 부분까지만 별들이 보임. -->
+    <div>
     <!-- landing-page section -->
 
     <div class="container">
-        <div class="banner">
-            <h1>How to Make a <span> Muffins</span></h1>
+        <div class="banner" >
+            <h1 style="padding-top: 50px;">How to Make a <span> Muffins</span></h1>
             <p>Let's Bake Together!<br>
                 <br>ingredients<br>
                 <p class="ingredients">
@@ -48,7 +57,9 @@
         <div class="curr-container-title">
             <!-- <h1 class="wow animated bounce delay-2s">How to Make a  Muffins</h1></div>
             <div class=" wow constellation animated fadeInUp delay-2s"> -->
-        <h1 id="get-started" class="wow zoomIn" data-wow-delay="1.5s">How to Make a  Muffins</h1></div>
+        <h1 id="get-started" style="background-color: rgba(185, 48, 190, 0.185); color: rgba(241, 213, 241, 1)" class="wow zoomIn" data-wow-delay="1.5s">
+            How to Make a  Muffins</h1></div>
+            
         <div id="dback" style="text-align: center;">
             <img class= 'bbtt' src="./../pics/Photofox.png" alt="">
         </div>
@@ -110,13 +121,48 @@
                             , about <span>30 min</span>utes.<br></p>
                         <br>
                             </div>
-                    <div class="btn-wrapper">
-                        <button class="btn btn1" onclick = "location.href = '#' ">community</button>
-                        <button class="btn btn2" onclick = "location.href = '#' ">submit!</button>
+                    <!-- <div class="btn-wrapper"> -->
+                        <!-- <button class="btn btn1" onclick = "location.href = '#' ">community</button>
+                        <button class="btn btn2" onclick = "location.href = '#' ">submit!</button> -->
+                        <div  class="btn-wrapper">
+                            <button class="btn" onclick = "location.href = '#' ">community</button>
+                        <button class="btn wow heartBeat" data-wow-delay="1.5s" data-wow-iteration ='3' onclick = "location.href = '#' ">submit!</button>
                     </div>
-                    </div>
+
+                    
+                    <!-- youtube prac btn -->
+                    <!-- <div class="for-box" style="box-sizing: border-box;">
+                        <div class="btn-wrap" style="padding: 50px;
+                        display:flex; align-items: center; justify-content:center; flex-wrap: wrap;
+                        height: 100vh; "> -->
+                        <!-- 100vh = full screen size -->
+                        <!-- <button>submit</button>
+                        <button>submit</button> -->
+                    <!-- </div> -->
+                <!-- </div></div> -->
+                    <!-- </div> -->
         <footer>
-            <div style="height: 200px;">푸터-본문</div>
+                <div class="footer">
+                        <div class="item">
+                            <img src='./../pics/oat.png' style="width: 100px; height:100px;" alt="사진">
+                        </div>
+                        <div class="item">
+                            <pre>
+                
+                (주)팀이름 | 대표이사들 : 강상혁 김은영 마서연 박효빈 한지원 |
+                주소 : 광주광역시 동구 필문대로 309 | 사업자등록번호:123456789 | 통신판매신고 : 132광주4752 |
+                <h7>copyright(c) 2019 all right reserved</h7>
+                        </pre>
+                        </div>
+                        <div class="item">
+                            <div class='item_b'> BO SNS</div>
+                            유튜브 | 블로그 | 인스타그램
+                            <div class='item_b'>고객센터</div>
+                            평일 : 9:00-18:30
+                            <div class='item_b'>1:1상담</div>
+                            누가할래?난 안해
+                        </div>
+                    </div>
             <div><a href='#get-started' class="top">
                 <i class="fas fa-arrow-up"></i>
             </a></div>
@@ -124,6 +170,7 @@
                     
         </div>
     </div>
+</div>
 
 </body>
 </html>
