@@ -8,3 +8,6 @@ def home(request):
 
 def intro(request) :
     return render(request, 'intro.html')
+
+def notice(request) :
+    return render(request, 'notice.html')
