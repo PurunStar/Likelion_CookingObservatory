@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/create.css.' %}">
-    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/CRED.css.' %}">
     <title>Board</title>
     <script>
         function goBack() {
@@ -54,8 +53,8 @@
                 <div class="create_board">
                     <form action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
-                        <div>
-                            <input class="title" type="text" name="title" placeholder="게시글 제목을 입력하세요.">
+                        <div class="title">
+                            <input type="text" name="title" placeholder="게시글 제목을 입력하세요.">
                         </div>
                         <div class="text">
                             <textarea name="text" id="" cols="10" rows="10" placeholder="내용을 입력하세요."></textarea>
@@ -63,7 +62,11 @@
                         <div class="img">
                             {{form.image}}
                         </div>
-                        <input type="submit" value="Upload" class="btn btn-primary">
+                        <div class="btn_">
+                            <input type="submit" value="등록" class="btn btn-primary">
+                            <a href="{% url 'photo:list' %}"><input type="button" value="목록"></a>
+                            <input type="button" value="뒤로" onclick="goBack();">
+                        </div>
                     </form>
                 </div>
             </div>

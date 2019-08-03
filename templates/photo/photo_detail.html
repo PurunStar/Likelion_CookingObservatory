@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="{% static 'css/detail.css' %}">
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <title>Board</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 
 </head>
 
@@ -91,7 +96,7 @@
                         <p>{{ object.text }}</p>
                     </div>
                     <!-- 좋아요 버튼 -->
-                    <div class="like">
+                    <div class="content_btn">
                         <a href="{%url 'photo:like' object.id%}">
                             <div class="btn_like {%if user in object.like.all%} active {%endif%}">
                                 좋아요
@@ -102,7 +107,17 @@
                         {%elif object.like.all.count%}
                         <b>{{object.like.all.count}}</b>
                         {%endif%}
+
+                        <div class="btn_">
+                            <a href="{% url 'photo:list' %}"><input type="button" value="목록"></a>
+                            {% if user == object.author %}
+                            <a href="{% url 'photo:update' object.id %}"><input type="submit" value="수정"></a>
+                            <a href="{% url 'photo:delete' object.id %}"><input type="submit" value="삭제"></a>
+
+                            {% endif %}
+                        </div>
                     </div>
+
                     <!-- 댓글 -->
                     <div class="comment_area">
                         <div class="comment_head">
@@ -129,14 +144,14 @@
                                         <form id="delete" method="POST" action="">
                                             {% csrf_token %}<input type="hidden"> </form>
                                     </div>
-                                        {%else%}
-                                        <div class="hover_nav">
-                                            <a href="#">댓글</a>
-                                        </div>
-                                        {%endif%}
-                                        <div class="comment">
-                                            <p>{{comment.body}}</p>
-                                        </div>
+                                    {%else%}
+                                    <div class="hover_nav">
+                                        <a href="#">댓글</a>
+                                    </div>
+                                    {%endif%}
+                                    <div class="comment">
+                                        <p>{{comment.body}}</p>
+                                    </div>
                                 </li>
                                 {% endfor %}
                             </ul>

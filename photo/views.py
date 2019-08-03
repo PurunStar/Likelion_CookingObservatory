@@ -20,6 +20,7 @@ from .models import Comment
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
+
 #mylist
 class PhotoMylist(ListView) :
     model = Photo
@@ -48,7 +49,6 @@ class PhotoLike(View) :
                     photo.like.remove(user)
                 else : 
                     photo.like.add(user)
-            #좋아요를 누른 페이지에 있도록 redirect ??? 
             referer_url = request.META.get('HTTP_REFERER')
             path = urlparse(referer_url).path
             return HttpResponseRedirect(path)                 
@@ -63,8 +63,10 @@ class PhotoList(ListView) :
     paginate_by = 6
 
     def get_context_data(self, **kwargs):
+        global page
         context = super(PhotoList, self).get_context_data(**kwargs)
         paginator = context['paginator']
+
         #5개씩 잘라서 보여줌
         page_numbers_range = 5
         max_index = len(paginator.page_range)
@@ -101,17 +103,18 @@ class PhotoCreate(CreateView) :
 
 class PhotoUpdate(UpdateView) : 
     model = Photo
-    fields = ['text' , 'image']
+    fields = ['title', 'text' , 'image']
     template_name_suffix = '_update'
-    success_url ='/photo'
 
     def dispatch(self, request, *args, **kwargs):
         object = self.get_object()
+        id = object.id
         if object.author != request.user :
             messages.warning(request, '수정할 권한이 없습니다.')
             return HttpResponseRedirect('')
-        else : 
+        else :  
             return super(PhotoUpdate, self).dispatch(request, *args, **kwargs)
+        success_url = ('/photo/detail/' + str(id))
 
 class PhotoDelete(DeleteView) : 
     model = Photo

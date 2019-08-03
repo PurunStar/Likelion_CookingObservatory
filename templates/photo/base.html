@@ -38,12 +38,6 @@
                 <li><a href="{%url 'accounts:signup'%}">회원가입</a></li>
                 {%endif%}
 
-                {%if message %}
-                {%for message in messages %}
-                <p>{{message}}</p>
-                {%endfor%}
-                {%endif%}
-
             </div>
         </div>
         <div id="content_wrap">
@@ -67,7 +61,8 @@
                         </div>
                     </div>
                     <div class="card_body">
-                        <p>{{ object.summary }}
+                        <p>
+                            {{ object.summary }}
                             <!-- 문자열 길이 -->
                             {% if object.len > 17 %}
                             <a href="{% url 'photo:detail' object.id %}">..more</a>
