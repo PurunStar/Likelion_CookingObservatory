@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import PhotoMylist, PhotoLike, PhotoList, PhotoDelete, PhotoCreate, PhotoUpdate, PhotoDetail
+from .views import PhotoMylist, PhotoLike, PhotoList, PhotoDelete, PhotoCreate, PhotoUpdate, PhotoDetail ,PostCountHitDetailView
 from . import views
 
 #다른 앱들과 url parttern이름이 겹치는것을 방지하기 위해 사용 
@@ -11,7 +11,8 @@ urlpatterns = [
     path("delete/<int:pk>", PhotoDelete.as_view(), name='delete'),
     path("update/<int:pk>", PhotoUpdate.as_view(), name='update'),
     #detail + 댓글
-    path("detail/<int:pk>", PhotoDetail.as_view(), name='detail'),
+    #조회수 + detail 함수 연결
+    path("detail/<int:pk>", PostCountHitDetailView.as_view(), name='detail'),
     #전체 사진을 보여주는 photolist
     path("",PhotoList.as_view(), name='list'),
     # path("", views.base, name='list'),

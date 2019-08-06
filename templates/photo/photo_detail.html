@@ -69,8 +69,12 @@
                                 {{object.author}}
                             </div>
                             <div class="right_side">
-                                <span>조회 수
-                                    <b>(구현해봐)</b>
+                                <span>
+                                    <b>조회수 : {{ hitcount.total_hits }} </b>
+                                    <b>The unique PK is:</b>
+                                    <b>{{ hitcount.pk }}</b>
+                                    <b>Hit counted?</b>
+                                    <b>{{ hitcount.hit_counted }}</b>
                                 </span>
                                 <span>좋아요
                                     {%if object.like.all.count == 0%}

@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'menu.apps.MenuConfig',
     'photo',
     'imagekit',
+    'hitcount'
 ]
 
 MIDDLEWARE = [

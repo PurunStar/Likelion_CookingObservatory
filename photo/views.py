@@ -20,6 +20,7 @@ from .models import Comment
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 
+from hitcount.views import HitCountDetailView
 
 #mylist
 class PhotoMylist(ListView) :
@@ -131,8 +132,17 @@ class PhotoDelete(DeleteView) :
 
 class PhotoDetail(DetailView) : 
     model = Photo
-    template_name_suffix = '_detail'
 
+    def get_context_data(self, **kwargs):
+        context = super(PhotoDetail, self).get_context_data(**kwargs)
+        context['photo_list'] = Photo.objects.all()
+        return context
+
+class PostCountHitDetailView(PhotoDetail, HitCountDetailView):
+    """
+    Generic hitcount class based view that will also perform the hitcount logic.
+    """
+    count_hit = True
 
 @login_required
 def comment_add(request, photo_id) :

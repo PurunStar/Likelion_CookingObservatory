@@ -5,11 +5,16 @@ from django.urls import reverse
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
+from django.contrib.contenttypes.fields import GenericRelation
+from hitcount.models import HitCount, HitCountMixin
+
 class Photo(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user', null=True)
     title = models.CharField(max_length=20 ,null=True)
     text = models.TextField(blank=True)
     image = models.ImageField(upload_to='timeline_photo/%Y/%m/%d')  # 알아서 등록날자를 적어
+
+    hit_count_generic = GenericRelation( HitCount, object_id_field='object_pk', related_query_name='hit_count_generic_relation')
 
     #크기 줄이는게 아닌데 ?? 
     image_thumbnail = ImageSpecField(source = 'image', processors = [ResizeToFill(300, 300)])
@@ -20,7 +25,7 @@ class Photo(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     like = models.ManyToManyField(User, related_name='like_post', blank=True)
-    
+
     #제목 그래도 출력
     def __str__(self):
         return  self.text
