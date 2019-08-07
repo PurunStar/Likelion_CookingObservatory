@@ -26,8 +26,10 @@
         </header>
         <section>
             <div class="lv1-wrapper">
-                <h1 class="subtitle">level 1(초급반)</h1>
-                <p>Choose the bakery you want to make!</p>
+                <h1 class="subtitle">level 1 (초급반)</h1>
+                <p>Choose the bakery you want to make!
+                    <br>Then, complete the constallation.
+                </p>
             </div>
             <div class='star-pic' style="text-align: center;">
                 <img src="./../pics/screenshot1.png" alt="작은곰자리" usemap="#vending" style= 'border: 10px solid rgba(255, 255, 255, 0.103); width: 480px; height:360px;'/>
@@ -35,17 +37,18 @@
             <div class="recommand-progressbar">
                 <p style="text-align: left; font-size: 1.6rem; margin-left: 5%;">recommand progress</p>
                 <ul>
-                    <li class="active">buleberry<br>muffin</li>
-                    <li>ginger<br>muffin</li>
-                    <li class="active">sweet pumpkin<br>pound</li>
-                    <li>walnut caramel<br>pound</li>
-                    <li class="active">sweet pumpkin<br>pie</li>
-                    <li>egg<br>tart</li>
-                    <li class="active">strawberry<br>tart</li>
-                    <li>tea chocolate<br>scones</li>
+                    <li class="active" onclick="window.open('./curr_landing_page.html')">buleberry<br>muffin</li>
+                    <li onclick="window.open('./curr_landing_page.html')">ginger<br>muffin</li>
+                    <li class="active" onclick="window.open('./curr_landing_page.html')">sweet pumpkin<br>pound</li>
+                    <li onclick="window.open('./curr_landing_page.html')">walnut caramel<br>pound</li>
+                    <li class="active" onclick="window.open('./curr_landing_page.html')">sweet pumpkin<br>pie</li>
+                    <li onclick="window.open('./curr_landing_page.html')">egg<br>tart</li>
+                    <li class="active" onclick="window.open('./curr_landing_page.html')">strawberry<br>tart</li>
+                    <li onclick="window.open('./curr_landing_page.html')">tea chocolate<br>scones</li>
                 </ul>
             </div>
                 <map name="vending">
+                    <!-- 총 8개로 다시 나눠야함. -->
                     <area shape="rect" coords="10px 10px 150px 185px" href="./curr_landing_page.html" alt="1-1">
                     <area shape="rect" coords="150px 10px 260px 185px" href="./curr_landing_page.html" alt="1-2">
                     <area shape="rect" coords="260px 10px 350px 185px" href="./curr_landing_page.html" alt="1-3">
@@ -57,6 +60,8 @@
                     <!-- <area shape="rect" coords="" href="" alt=""> -->
                 </map>
             <!-- </div> -->
+            <div style='padding: 0% 10%; margin-left: 5%;'>
+            <p style="font-size: 1.6rem; text-align: left;">level 1 bakery list</p></div>
             <div style="text-align: center;">
                 <div>
                     <div class="container">

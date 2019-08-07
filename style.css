@@ -158,95 +158,7 @@ background: linear-gradient(to bottom, #0f0c29, #302b63, #3c395f,  #471e4b); /* 
         /* animation: moveToLeft 2s; */
 }
 
-.bbtt {
-    width: 480px; height:360px;
-    text-align: center;
-}
-/* constellation */
 
-/* .constellation {
-    width: 400px;
-    height: 300px;
-    background: url('./../pics/screenshot1.png') no-repeat, 
-    url('./../pics/chef-hat.png') left top no-repeat;
-    background-repeat: no-repeat;
-url('./../pics/DF7A01CE-238F-4F37-AEEF-59390ED351BE.png'),
-} */
-/* 
-#dback {
-    width: 480px; height:360px;
-    background-image: url('./../pics/screenshot1.png') ;
-    background-position: initial;
-    background-repeat: no-repeat;
-    margin-left: auto; margin-right: auto;
-} */
-
-/* .constellation {
-    margin: 80px 50px 50px;
-    background-size: cover;
-    color: yellowgreen;
-    background-repeat: no-repeat;
-    position: relative;
-    z-index: 1;
-    text-align: center;
-
-}
-.constellation:after {
-    background-image: url('./../pics/Photofox.png');
-    background-repeat: no-repeat;
-    bottom: 0;
-    top:0;
-    left:0;
-    background-position: center;
-    position:absolute;
-    background-size:100%;
-    opacity:0.3!important;
-    filter:alpha(opacity=30);
-    z-index:-1;
-    content:"";
-    text-align: center;
-    width: 480px;
-    height: 360px;
-    width:100%;
-    height:100%;
-} */
-
-/* .bbtt {
-    display: inline-block;
-    position: absolute;
-    clip: rect(0px, 180px, 180px, 0px);
-
-} */
-/* 
-    width: 180px;
-    height: 180px;
-    background:url('./../pics/Photofox.png');
-    background-position: 0px 0px;
-    text-indent: -9999px;
-    overflow: hidden;
-    border: none;
-
-.bbtt.active {
-    display: inline-block;
-    width: 180px;
-    height: 180px;
-    background:url('./../pics/Photofox.png');
-    background-position: 0px 0px;
-    text-indent: -9999px;
-    overflow: hidden;
-    border: none;
-} */
-
-/* e.g. */
-
-/* 
-.recipe .time-ing .ww{
-    background-color: rgba(255, 153, 0, 0.5);
-    padding-bottom: 30px;
-    text-align: center;
-    margin: 200px 15% 30px;
-    color: #ddd;
-} */
 
 .time, .ing-set, .h1-txt {
     /* padding-bottom: 30px; */
@@ -285,17 +197,120 @@ url('./../pics/DF7A01CE-238F-4F37-AEEF-59390ED351BE.png'),
     color: rgb(228, 240, 64);
     font-weight: 700;
 }
-.numbering {
+/* .numbering {
     padding-right: 20px;
 }
 .step img {
     width: 75%;
     height: 45%;
-}
-/* 
-.wrap2 {
-    box-sizing: border-box;
 } */
+
+
+.timeline {
+    font-size: 20px;
+    width: 80%;
+    margin: 50px auto;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+ul::before {
+    content: '';
+    height: 100%;
+    width: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    background: rgb(228, 240, 64);
+}
+
+li{
+    width: 100%;
+    position: relative;
+    padding: 60px 0 20px 0;
+    overflow: hidden;
+}
+li:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgb(228, 240, 64);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 15px;
+}
+li:last-child{
+    padding: 22px 0;
+}
+li:last-child:before {
+    display: none;
+}
+ul li:nth-child(odd) .timeline-text {
+    float: left;
+}
+
+h3{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgb(228, 240, 64);
+    padding: 8px 25px;
+    top: 0;
+    margin: 0;
+}
+.timeline-text {
+    width: 30%;
+    padding: 25px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.342);
+    float: right;
+    position: relative;
+}
+
+.timeline-text:before {
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 10px solid rgba(0, 0, 0, 0.342);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+li:nth-child(odd) .timeline-text:before {
+    right: -10px;
+}
+li:nth-child(even) .timeline-text:before {
+    left: -10px;
+    border-left: 0px solid rgba(0, 0, 0, 0.342);
+    border-right: 10px solid rgba(0, 0, 0, 0.342);
+}
+li:nth-child(odd) .img {
+    left: -10px;
+    float: right;
+    width: 35%;
+    height: 10%;
+}
+
+li:nth-child(even) .img {
+    right: -10px;
+    float: left;
+    width: 35%;
+    height: 10%;
+}
+/* buttons */
 
 .btn-wrapper {
     margin-top: 10%;
@@ -396,6 +411,8 @@ footer {
     size: 15px;
     line-height: 15px;
 }
+
+/* top-button */
 
 .top {
     font-size: 20px;
