@@ -37,14 +37,11 @@
                 
             }
             .boxx {
-                /* float: left; */
                 width: 583px;
                 height: 384px;
                 margin: 0;
-                position: relative;
-                
+                position: relative;                
                 align-items: center;
-                /* transition: (-50%, -50%); */
             }
             .back{
                 position: absolute;
@@ -52,14 +49,12 @@
             }
             </style>
 </head>
-<body>
-        
+<body>        
         <section class="wrapper">
                 <div id="stars"></div>
                 <div id="stars2"></div>
                 <div id="stars3"></div>
             </section>
-            <!-- 여기 페이지는 별 좌표의 최대 높이값보다 커서 푸터 윗 부분까지만 별들이 보임. -->
     <div>
     <!-- landing-page section -->
 
@@ -87,7 +82,6 @@
     </div>
 
     <!-- curriculum section -->
-<!-- https://cdn.pixabay.com/photo/2016/06/02/02/38/mesh-1430108_1280.png 보더이미지 -->
     <div class="curr-container">
         <div class="curr-container-title">
             <!-- <h1 class="wow animated bounce delay-2s">How to Make a  Muffins</h1></div>
@@ -100,7 +94,7 @@
                 <div  class= 'front'>
                     <img src="./../pics/Photofox.png" alt="">
                 </div>
-                <div class= 'back'>
+                <div class= 'back wow flash' data-wow-delay="2.5s" data-wow-iteration ='infinite'>
                     <img src="./../pics/7A90D66B-9DC7-440B-A440-071A03672144.png" alt="">
                 </div>
             </div>
@@ -119,16 +113,10 @@
         
 
             
-        <!-- <div class=" wow fadeInUp constellation" style=" text-align: center;">
-            <p></p><img class= 'bbtt' style=" border: 10px solid rgba(255, 255, 255, 0.103);" src="./../pics/Photofox.png" alt="">
-            </p></div> -->
-            <!-- width: 480px; height:360px;  -->
-            <div class="explain wow fadeIn" style="padding-bottom: 30px; margin-bottom: 200px;">
-                        
+            <div class="explain wow fadeIn" style="padding-bottom: 30px; margin-bottom: 200px;">                        
                     <p style="padding: 20px 0px 0px 20px; "><span style="color: rgb(228, 240, 64);" >과제</span> : <span>*</span> 이 달린 과정을 찍어 포스팅 </p>
                     </div>
 
-        <!-- data-wow-duration='5s' -->
         <div class='recipe'>
             <div class="time wow bounceInLeft" data-wow-duration='3s'>
                 <img src='./../pics/clock-with-white-face.png' style=" margin-top:30px; width: 8%; height: 8%; visibility: visible;" >
@@ -149,12 +137,11 @@
             </div>
             <div class="time wow bounceInLeft" data-wow-duration='3s' style='margin:50px 0px 100px;'>
                 <img src='./../pics/clock-with-white-face.png' onclick="window.open('./timer.html')" style="width: 8%; height: 8%; visibility: visible;" >
-                    <p>Timer</p><!-- 준비|요리|ready in 시간 으로 나눠야할까 고민.-->
+                    <p>Timer</p>
             </div>
             <div class="h1-txt wow zoomIn">
                 <h1 class="wow shake" data-wow-delay="1.5s">Let bake together!</h1>
             </div>
-            <!-- 준비|요리|ready in 시간 으로 나눠야할까 고민.-->
                 </div>
 
         <!-- recipe-timeline -->
@@ -209,19 +196,6 @@
                             <button class="btn" onclick = "location.href = '#' ">community</button>
                         <button class="btn wow heartBeat" data-wow-delay="1.5s" data-wow-iteration ='3' onclick = "location.href = '#' ">submit!</button>
                     </div>
-
-                    
-                    <!-- youtube prac btn -->
-                    <!-- <div class="for-box" style="box-sizing: border-box;">
-                        <div class="btn-wrap" style="padding: 50px;
-                        display:flex; align-items: center; justify-content:center; flex-wrap: wrap;
-                        height: 100vh; "> -->
-                        <!-- 100vh = full screen size -->
-                        <!-- <button>submit</button>
-                        <button>submit</button> -->
-                    <!-- </div> -->
-                <!-- </div></div> -->
-                    <!-- </div> -->
         <footer>
                 <div class="footer">
                         <div class="item">
@@ -252,13 +226,13 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     function hideImage() { 
         var gitt = document.getElementById('00');
         if(gitt.style.display == 'none')
             gitt.style.display = 'block';
 }
-</script>
+</script> -->
 
 </body>
 </html>

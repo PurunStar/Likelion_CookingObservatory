@@ -58,7 +58,8 @@
         }
         .btn {
             background-color: #fff;
-            margin-bottom: 2rem;
+            margin-top: 2rem;
+            /* margin-left: 1rem; */
             border-radius: 4px;
             border: none;
             outline: none;
@@ -66,7 +67,9 @@
             padding: 0.8rem 1.7rem;
             font-size: 1.2rem;
             font-weight: 700;
+            float: left;
         }
+        
         .start {
             color: rgb(0, 201, 17);
         }
@@ -80,10 +83,12 @@
             margin-bottom: 2rem;
             color: #fff;
         }
+        #reset{
+            margin-left: 1rem;
+        }
     </style>
 </head>
 <body>
-    
     <header><h1>timer</h1></header>
     <div class="content">
         <div class="counter"></div>
@@ -93,8 +98,11 @@
             <button class="btn start" id='continue' value="1" onclick="check(this)">continue</button>
             <button class="btn stop" id='stop' value="0" onclick="check(this)">stop</button>
             <button class="btn start" id='ok' onclick="toSubmit()">submit!</button>
+            <button class="btn reset" id='reset' onclick="toReset()">reset</button>
+
         </div>
     </div>
+    <!-- javascript START -->
     <script type="text/javascript">
     const container = document.querySelector('.counter');
 const buttonDiv = document.querySelector('.buttons');
@@ -107,6 +115,7 @@ var toCount = false;
 
 function toSubmit() {
     display('start');
+    display('reset');
     remove('seconds');
     remove('ok');
     seconds = Number(secInput.value);
@@ -123,15 +132,21 @@ function check(stat){
     if(stat.id == 'start'){
         display('stop');
         remove('start');
+        display('reset');
     }
     else if(stat.id =='stop'){
         display('continue');
         remove('stop');
+        display('reset');
     }
     else{
         display('stop');
         remove('continue');
+        display('reset');
     }
+}
+function toReset(){
+    location.href='./timer.html';
 }
 function count(){
     if (seconds > 0) {
@@ -150,7 +165,9 @@ function count(){
     }
     else {
         container.innerHTML = 'TIME OUT!';
-        buttonDiv.style.opacity = '0';
+        buttonDiv.style.opacity = '1';
+        remove('stop');
+        display('reset');
     }
 }
 function counting(){
