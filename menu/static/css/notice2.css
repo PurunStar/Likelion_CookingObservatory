@@ -1,0 +1,164 @@
+html,
+body {
+    /* background: #0f0c29;
+    background: -webkit-linear-gradient(to bottom, #0f0c29, #302b63, #3c395f, #471e4b);
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #3c395f, #471e4b);
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: ivory;
+}
+
+.accordion {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    font-size: 14px;
+    border: 1px solid #542437;
+    border-radius: 10px;
+    width: 600px;
+    padding: 10px;
+    background: #fff;
+}
+
+.accordion ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.accordion li {
+    margin: 0;
+    padding: 0;
+}
+
+.accordion [type=radio],
+.accordion [type=checkbox] {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    background: rgb(124, 89, 95);
+    border: 1px solid #542437;
+    color: #150f38;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+}
+
+.accordion ul li label:hover,
+.accordion [type=radio]:checked~label,
+.accordion [type=checkbox]:checked~label {
+    background: #C02942;
+    color: #FFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5)
+}
+
+.accordion .content {
+    padding: 0 10px;
+    overflow: hidden;
+    border: 1px solid #fff;
+    /* Make the border match the background so it fades in nicely */
+    -webkit-transition: all .5s ease-out;
+    -moz-transition: all .5s ease-out;
+}
+
+.accordion p {
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.accordion h3 {
+    color: #542437;
+    padding: 0;
+    margin: 10px 0;
+    text-align: right;
+}
+
+pre {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+/* Vertical */
+.vertical ul li {
+    overflow: hidden;
+    margin: 0 0 5px;
+}
+
+.vertical ul li label {
+    padding: 10px;
+}
+
+.vertical [type=radio]:checked~label,
+.vertical [type=checkbox]:checked~label {
+    border-bottom: 0;
+}
+
+.vertical ul li label:hover {
+    border: 1px solid #542437;
+    /* We don't want the border to disappear on hover */
+}
+
+.vertical ul li .content {
+    height: 0px;
+    border-top: 0;
+}
+
+.vertical [type=radio]:checked~label~.content,
+.vertical [type=checkbox]:checked~label~.content {
+    height: 300px;
+    border: 1px solid #542437;
+
+}
+
+.sign {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.sign__word {
+    font-size: 5.6rem;
+    text-align: center;
+    line-height: 1;
+    color: #c6e2ff;
+    animation: neon .08s ease-in-out infinite alternate;
+}
+
+
+
+/*-- Animation Keyframes --*/
+
+
+
+@keyframes neon {
+    from {
+        text-shadow:
+            0 0 6px rgba(202, 228, 225, 0.92),
+            0 0 30px rgba(202, 228, 225, 0.34),
+            0 0 12px rgba(30, 132, 242, 0.52),
+            0 0 21px rgba(30, 132, 242, 0.92),
+            0 0 34px rgba(30, 132, 242, 0.78),
+            0 0 54px rgba(30, 132, 242, 0.92);
+    }
+
+    to {
+        text-shadow:
+            0 0 6px rgba(202, 228, 225, 0.98),
+            0 0 30px rgba(202, 228, 225, 0.42),
+            0 0 12px rgba(30, 132, 242, 0.58),
+            0 0 22px rgba(30, 132, 242, 0.84),
+            0 0 38px rgba(30, 132, 242, 0.88),
+            0 0 60px rgba(30, 132, 242, 1);
+    }
+}

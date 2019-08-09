@@ -1,0 +1,302 @@
+/* detail.css */
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    height: 100%;
+    background: ivory;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+#wrap {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+}
+
+#hearder_wrap {
+    width: 100%;
+}
+
+#content_wrap {
+    width: 100%;
+}
+
+#footer_wrap {
+    position: absolute;
+    bottom: -200px;
+    height: 100px;
+    width: 100%;
+}
+
+.hearder_container {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto
+}
+
+.hearder_container .logo a {
+    width: 300px;
+    height: 230px;
+    background: url(../images/logo1.png) no-repeat;
+    background-size: 300px auto;
+    text-indent: -9999em;
+    display: block;
+    margin: 0 auto;
+}
+
+.hearder_container nav {
+    height: 50px;
+    text-align: center;
+}
+
+.hearder_container li {
+    margin-right: 29px;
+    font-weight: bold;
+    display: inline;
+}
+
+.hearder_container li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.banner {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+/* 높이 */
+.content_container {
+    width: 1200px;
+    margin: 0 auto;
+    /* background: #999999; */
+}
+
+.footer_container {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+.content_container .conetent_head {
+    margin: 0 auto;
+    width: 900px;
+    background: rgba(255, 255, 255, 0.1)
+}
+
+.conetent_head .area {}
+
+/* detail 제목 및 아이디 조회수, 좋아요 */
+.conetent_head .area .top_area {
+    padding: 8px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+}
+
+.conetent_head .area .top_area .title,
+.conetent_head .area .bot_area .author {
+    padding-left: 15px;
+    float: left;
+}
+
+.conetent_head .area .top_area .time,
+.conetent_head .area .bot_area .right_side {
+    padding-right: 15px;
+    float: right;
+}
+
+.conetent_head .area .top_area::after,
+.conetent_head .area .bot_area::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.conetent_head .area .bot_area {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5)
+}
+
+/* detail 사진 및 내용 */
+.content_container .content_body {
+    margin: 0 auto;
+    width: 900px;
+
+}
+
+.content_container .content_body .content_area {
+    white-space: pre-wrap;
+}
+
+.content_container .content_body .content_area img {
+    /* img 중앙정렬 */
+    /* display: block;
+    margin: 0 auto; */
+    padding: 20px 0;
+    margin: -20px 0 -80px 0;
+
+}
+
+/* 좋아요 버튼 */
+.content_btn {
+    /* 좋아요 버튼 하단 고정 */
+    /* position: absolute;
+    left: 50%; */
+    text-align: center;
+    padding: 30px 0 60px 0;
+}
+
+.content_btn .btn_ {
+    padding: 20px 0 ;
+}
+
+.content_btn .btn_ input {
+    margin-right: 10px;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFF 0%, #F3F3F3 100%);
+    border: 1px solid;
+    border-color: #CCC #C6C6C6 #C3C3C3 #CCC;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
+    box-shadow: inset 0 0 1px 1px #FFF, 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.btn_like {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/instagramicon.png);
+    /* background:url({% static 'images/instagramicon.png' %}); */
+    /* background:url({% static 'images/instagramicon.png' %}); */
+    background-position: -526px -247px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none;
+}
+
+.active {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url({% static 'images/instagramicon.png' %});
+    background-position: -526px -196px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none;
+}
+
+/* 댓글 창*/
+.content_body .comment_area {
+    margin-bottom: 50px;
+}
+
+.comment_area .comment_head {}
+
+.comment_area .comment_head .tag {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 10px 16px;
+    background: linear-gradient(to bottom, #FFF 0%, #F9F9F9 100%)
+}
+
+.comment_head .comment_ul .comment_list {
+    position: relative;
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+/* 댓글 리스트 */
+.comment_ul .comment_list .meta p {
+    display: inline;
+    font-weight: 600
+}
+
+.comment_ul .comment_list .meta p:last-child {
+    font-size: 10px;
+    padding: 12px;
+    font-weight: 400
+}
+
+.comment_area .comment_box {
+    margin: 32px;
+    padding: 12px 20px;
+    background: #FCFCFC;
+    border: 1px solid #DDD;
+    border-bottom-color: #CCC;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .1);
+}
+
+.comment_box label {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.comment_box textarea {
+    margin: 5px 0;
+    resize: none;
+    width: 100%;
+    padding: 3px;
+    border-radius: 8px
+}
+
+.comment_box .cmt_btn input {
+    float: right;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(to bottom, #FFF 0%, #F3F3F3 100%);
+    border: 1px solid;
+    border-color: #CCC #C6C6C6 #C3C3C3 #CCC;
+    border-radius: 3px;
+    text-decoration: none;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
+    box-shadow: inset 0 0 1px 1px #FFF, 0 1px 1px rgba(0, 0, 0, .1);
+}
+
+.comment_box .cmt_btn::after {
+    content: '';
+    clear: both;
+    display: block
+}
+
+.comment_ul .comment_list .hover_nav {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    margin-right: 50px;
+}
+
+.comment_ul .comment_list .hover_nav {
+    visibility: hidden;
+}
+
+.comment_ul .comment_list .hover_nav a {
+    font-size: 10px;
+    color: black;
+    padding-right: 10px;
+}
+
+.comment_ul .comment_list:hover .hover_nav {
+    visibility: visible;
+}
+
+.comment_ul .comment_list .comment {
+    white-space: pre-wrap;
+    margin: -40px 0 -50px 0;
+}

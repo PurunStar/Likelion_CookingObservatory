@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+</head>
+<body>
+    <div class="signup_container">
+        <form action="{%url 'accounts:signup'%}" method="POST">
+            {% csrf_token %}
+            <h2>회원가입</h2>
+            <div class="agreement">
+                <div class="text">
+                    <span>가입할래요????</span>
+                    <p><span>111111111111111111111111</span></p>
+                    <p>111111111111111111111111</p>
+                    <p>111111111111111111111111</p>
+                    <p>111111111111111111111111</p>
+                    <p>111111111111111111111111</p>
+                    <p>111111111111111111111111</p>
+                    <p>111111111111111111111111</p>
+                </div>
+                <div class="confirm">
+                    <label for="accept"><input type="checkbox" name="accept" id="accept"> 약관을 모두 읽었으며 동의합니다.</label>
+
+                </div>
+            </div>
+            <div class="control">
+                <label for="id"><span>* </span>아이디 </label> <input type="text" name="username" id="id">
+            </div>
+            <div class="control">
+                <label for="pwd1"><span>* </span>비밀번호 </label> <input type="password" name="password1" id="pwd1">
+                <p class="check">비밀번호는 6자리 이상이어야 하며 영문과 숫자를 반드시 포함해야 합니다.</p>
+            </div>
+            <div class="control">
+                <label for="pwd2"><span>* </span>비밀번호 확인 </label> <input type="password" name="password2" id="pwd2">
+            </div>
+            <!-- <div class="control">
+                        <label for="email"><span>* </span>이메일 주소 </label> <input type="text" name="email" id="email">
+                    </div>
+                    <div class="control">
+                        <label for="name"><span>* </span>이름 </label> <input type="text" name="name" id="name">
+                    </div>
+                    <div class="control">
+                        <label for="name2"><span>* </span>닉네임 </label> <input type="text" name="name2" id="name2">
+                    </div>
+                    <div class="control">
+                        <label for="find_accounts_Q"><span>* </span>비밀번호 찾기 질문/답변 </label> -->
+            <!-- <input type="text" name="find_accounts_Q" id="find_accounts_Q"> -->
+            <!-- <select name="find_accounts_Q" id="find_accounts_Q">
+                            <option value="1">어머니의 고향은?</option>
+                            <option value="2">어머?</option>
+                            <option value="3">귀찮쓰?</option>
+                            <option value="4">4?</option>
+                            <option value="5">5?</option>
+                            <option value="6">6?</option>
+                        </select>
+                        <input type="text" name="find_accounts_A" id="find_accounts_A" title="비밀번호 찾기 답변">
+                    </div> -->
+            <div class="btn">
+                <div class="btn_container">
+                    <input type="submit" value="등록">
+                </div>
+            </div>
+    </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+/* 이거 사용함 */
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: ivory;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+}
+
+#hearder_wrap {
+    width: 100%;
+}
+
+#content_wrap {
+    width: 100%;
+}
+
+#footer_wrap {
+    width: 100%;
+}
+
+.hearder_container {
+    width: 1000px;
+    height: 300px;
+    margin: 0 auto
+}
+
+.hearder_container .logo a{
+    width: 300px;
+    height: 230px;
+    background: url(../images/logo1.png) no-repeat;
+    background-size: 300px auto;
+    text-indent: -9999em;
+    display: block;
+    margin:  0 auto;
+}
+
+.hearder_container nav{
+    height: 50px;
+    text-align: center;
+}   
+
+.hearder_container li{
+    margin-right: 29px;
+    font-weight: bold;
+    display: inline;
+}
+
+.hearder_container li a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.banner {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+.content_container {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto
+}
+
+.footer_container {
+    width: 1000px;
+    height: 100px;
+    background: #444444;
+    margin: 0 auto
+}
+
+/* 게시판 키워드 선택 옵션 */
+#content_wrap .banner {
+    text-align: center;
+}
+
+#content_wrap .banner input {
+    display: none;
+}
+
+#content_wrap .banner label {
+    padding: 0 18px;
+    margin: 30px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #8c8c8c;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    display: inline-block;
+    background: #fff;
+}
+
+/* check된 라벨의 상태 변경 */
+/* checked 된 라벨의 형제중 첫번쨰 한가지만 적용 */
+#content_wrap .banner input:checked+label {
+    background: #998675;
+    color: #fff;
+}
+
+
+/* card */
+.content_container {}
+
+/* float:left로 인해 부모의 높이가 사라지는 현상 방지 */
+.content_container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.content_container .card {
+    text-align: initial;
+    width: 350px;
+    /* 임시로 카드 높이를 지정해둔 상태 */
+    height: auto;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin: 19px 20px 20px 19px;
+    /* display: inline-block; */
+    float: left;
+    background: #ffffff
+}
+.content_container .card .card_header:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.content_container .card .title{
+    float: left;
+}
+
+.content_container .card .author{
+    float: right;
+}
+
+.content_container .card:nth-child(3n) {
+    margin-right: 0;
+}
+
+.content_container .card .image-wrapper{ 
+    clear: both;
+    width: 100%;
+}
+
+.content_container .card .image-wrapper .thumbnail{
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+}
+
+.content_container .card .image-wrapper .thumbnail .center{
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    -webkit-transform: translate(50%,50%); 
+    -ms-transform: translate(50%,50%); 
+    transform: translate(50%,50%);
+}
+
+.content_container .card .image-wrapper .thumbnail img{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    max-width: 100%; 
+    height: auto; 
+    -webkit-transform: translate(-50%,-50%); 
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/* .content_container .card  img {
+    vertical-align: top;
+    border-radius: 15px;
+    padding-bottom: 10px;
+} */
+
+.content_container .card .card_header {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.content_container .card .card_header h3{
+    
+}
+
+.content_container .card .card_body {
+    padding: 10px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.content_container .card ul {
+    list-style: none;
+}
+
+.content_container .card ul li {
+    padding: 12px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2)
+}
+
+.btn_like {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/instagramicon.png);
+    /* background:url({% static 'images/instagramicon.png' %}); */
+    /* background:url({% static 'images/instagramicon.png' %}); */
+    background-position: -526px -247px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none;
+}
+
+.active {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background:url({% static 'images/instagramicon.png' %});
+    background-position: -526px -196px;
+    text-indent: -9999px;
+    overflow: hidden;
+    border: none;
+}
+
+
+/* paginator */
+
+.paginator_container{
+    width: 100%
+}
+
+.paginator_container .pagination{
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 70px;
+}
+.paginator_container .pagination li{
+    display: inline-block;
+}
+
+.paginator_container .pagination a{
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+/* 현재 페이지 o */
+.paginator_container .pagination ._active a{
+    color: #222222
+}
+/* 현재 페이지 x */
+.paginator_container .pagination :not(._active) a{
+    color: black;
+}
+.paginator_container .pagination li a:hover{
+    color: #666666
+}
+
+.paginator_container .pagination .disabled a{
+    visibility: hidden;
+}

@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <title>Board</title>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="hearder_wrap">
+            <div class="hearder_container">
+                <div class="logo">
+                    <a href=""></a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a class="" href="{% url 'home' %}">Home</li>
+                        {%if user.is_authenticated%}
+                        <li><a href="#">{{user.username}}</a></li>
+                        <li><a href="{% url 'photo:create' %}">사진 올리기</a></li>
+                        <li><a href="{% url 'photo:mylist' %}">내사진 리스트</a></li>
+                        <li><a href="javascript:{document.getElementById('logout').submit()}">Logout</a></li>
+                        <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
+                            {% csrf_token %} <input type="hidden" />
+                        </form>
+                    </ul>
+
+                </nav>
+                {%else%}
+                <li><a href="{%url 'accounts:login'%}">Login</a></li>
+                <li><a href="{%url 'accounts:signup'%}">회원가입</a></li>
+                {%endif%}
+
+                {%if message %}
+                {%for message in messages %}
+                <p>{{message}}</p>
+                {%endfor%}
+                {%endif%}
+
+            </div>
+        </div>
+        <div id="content_wrap">
+            <div class="content_container">
+                <!-- 제목 및 아이디 조회수, 좋아요 -->
+                <div class="conetent_head">
+                    <div class="area">
+                        <div class="top_area">
+                            <div class="title">
+                                {{object.title}}
+                            </div>
+                            <div class="time">
+                                {{object.created|date:'Y.m.d H:i'}}
+                            </div>
+                        </div>
+                        <div class="bot_area">
+                            <div class="author">
+                                {{object.author}}
+                            </div>
+                            <div class="right_side">
+                                <span>
+                                    <b>조회수 : {{ hitcount.total_hits }} </b>
+                                    <b>The unique PK is:</b>
+                                    <b>{{ hitcount.pk }}</b>
+                                    <b>Hit counted?</b>
+                                    <b>{{ hitcount.hit_counted }}</b>
+                                </span>
+                                <span>좋아요
+                                    {%if object.like.all.count == 0%}
+                                    <b>0</b>
+                                    {%elif object.like.all.count%}
+                                    <b>{{object.like.all.count}}</b>
+                                    {%endif%}
+                                </span>
+                                <span>댓글
+                                    <b>{{object.comments.all.count}}</b>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 제목 및 아이디 조회수, 좋아요 -->
+
+                <!-- 사진 및 내용 -->
+                <div class="content_body">
+                    <div class="content_area">
+                        <p><img src="{{ object.image.url }}" alt="post_image">
+                        </p>
+                        {%if object.image2.url != null %}
+                        <p><img src="{{ object.image2.url }}" alt="post_image">
+                        </p>{%endif%}
+                        {%if object.image3.url != null %}
+                        <p><img src="{{ object.image3.url }}" alt="post_image">
+                        </p>{%endif%}
+                        <p>{{ object.text }}</p>
+                    </div>
+                    <!-- 좋아요 버튼 -->
+                    <div class="content_btn">
+                        <a href="{%url 'photo:like' object.id%}">
+                            <div class="btn_like {%if user in object.like.all%} active {%endif%}">
+                                좋아요
+                            </div>
+                        </a>
+                        {%if object.like.all.count == 0%}
+                        <b>0</b>
+                        {%elif object.like.all.count%}
+                        <b>{{object.like.all.count}}</b>
+                        {%endif%}
+
+                        <div class="btn_">
+                            <a href="{% url 'photo:list' %}"><input type="button" value="목록"></a>
+                            {% if user == object.author %}
+                            <a href="{% url 'photo:update' object.id %}"><input type="submit" value="수정"></a>
+                            <a href="{% url 'photo:delete' object.id %}"><input type="submit" value="삭제"></a>
+
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- 댓글 -->
+                    <div class="comment_area">
+                        <div class="comment_head">
+                            <div class="tag">
+                                <b>Comments '{{object.comments.all.count}}' </b>
+                            </div>
+                            <ul class="comment_ul">
+                                <!-- comment 갯수만큼 li생성 -->
+                                {% for comment in object.comments.all%}
+                                <li class="comment_list">
+                                    <!-- meta는 댓글 글쓴이 정보 -->
+                                    <div class="meta">
+                                        <p>{{comment.user.username}}</p>
+                                        <p>{{comment.date|date:'Y.m.d H:i'}}</p>
+                                    </div>
+                                    <!-- 댓글 글쓴이라면 수정 삭제 -->
+                                    {% if user == comment.user %}
+                                    <div class="hover_nav">
+                                        <a href="{% url 'photo:comment_edit' comment.id %}">수정</a>
+                                        <a href="#">댓글</a>
+                                        <a href="javascript:{var form=document.getElementById('delete');
+                                        form.action='/photo/comment_delete/{{comment.id}}';
+                                        form.submit();}">삭제</a>
+                                        <form id="delete" method="POST" action="">
+                                            {% csrf_token %}<input type="hidden"> </form>
+                                    </div>
+                                    {%else%}
+                                    <div class="hover_nav">
+                                        <a href="#">댓글</a>
+                                    </div>
+                                    {%endif%}
+                                    <div class="comment">
+                                        <p>{{comment.body}}</p>
+                                    </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="comment_box">
+                            <label for="">댓글쓰기</label>
+                            <form id="add" action="{% url 'photo:comment_add' object.id %}" method="POST">
+                                {% csrf_token %}
+                                <textarea rows=8 cols=40 name="body"></textarea>
+                                <div class="cmt_btn">
+                                    <input id="add" type="submit" value="등록">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer_wrap">
+            <div class="footer_container">
+                footer_container
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
