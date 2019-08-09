@@ -8,6 +8,65 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/notice2.css' %}">
     <title>Document</title>
+    <style>
+        footer {
+            padding-bottom: 10vh;
+            padding-top: 30vh;
+        }
+
+        .footer {
+            width: 100%;
+            height: 120px;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .item {
+            margin: 10px;
+            color: rgb(180, 151, 151);
+            font-size: 13px;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        .item:nth-child(1) {
+            -webkit-flex: 3;
+            flex: 1;
+        }
+
+        .item:nth-child(2) {
+            -webkit-flex: 1;
+            flex: 2;
+        }
+
+        .item:nth-child(3) {
+            -webkit-flex: 1;
+            flex: 1;
+            text-align: right;
+        }
+
+        .item_b {
+            font-weight: bolder;
+            size: 15px;
+            line-height: 15px;
+        }
+
+        .top {
+            font-size: 20px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            background: rgba(240, 164, 255, 0.5);
+            /* border-radius: 50%; */
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -138,6 +197,33 @@ diam.
             </li>
         </ul>
     </div>
+    <footer>
+        <div class="footer">
+            <div class="item">
+                <img src='../../static/images/lionbaking.jpg' style="width: 100px; height:100px;" alt="사진">
+            </div>
+            <div class="item">
+                <p>
+                    (주)팀이름 | 대표이사들 : 강상혁 김은영 마서연 박효빈 한지원 |
+                    주소 : 광주광역시 동구 필문대로 309
+                    <br><br>
+                    사업자등록번호:123456789 | 통신판매신고 : 132광주4752 |
+                    <h7>copyright(c) 2019 all right reserved</h7>
+                </p>
+            </div>
+            <div class="item">
+                <div class='item_b'> BO SNS</div>
+                유튜브 | 블로그 | 인스타그램
+                <div class='item_b'>고객센터</div>
+                평일 : 9:00-18:30
+                <div class='item_b'>1:1상담</div>
+                누가할래?난 안해
+            </div>
+        </div>
+        <div><a href='#get-started' class="top">
+                <i class="fas fa-arrow-up"></i>
+            </a></div>
+    </footer>
 
 </body>
 

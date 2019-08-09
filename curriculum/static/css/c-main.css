@@ -114,6 +114,8 @@ header > a {
     display: inline-block;
 }
 
+
+
 .c-wrapper img {
     width: 200px; height: 200px;
 }
@@ -200,14 +202,16 @@ header > a {
 }
 
 .step-detail h2 {
-    padding: 20px 0px 30px 20px;
+    font-size: 2rem;
+    padding: 1% 90% 5% 1%;
     color: #fff;
 }
 
 .step-detail p{
-    padding-left: 10px;
+    padding-left: 10%;
+    padding-right: 2%;
     color: #fff;
-    padding-bottom: 40px;
+    padding-bottom: 1.5rem;
 }
 
 
@@ -216,13 +220,14 @@ header > a {
 
 .contain {
     position: relative;
-    width: 200px; height: 200px;
+    width: 20%; height: 20%;
     display: inline-block;
-    padding-right: 10px; 
+    margin-bottom: 3%;
+    /* padding-right: 10px;  */
 }
 
 .image {
-    width: 200px; height: 200px;
+    width: 100%; height: 100%;
     display: block;
     /* background-color: rgb(214, 132, 132); */
 }
@@ -335,18 +340,36 @@ footer {
     line-height: 15px;
 }
 
+a.chat {
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 70px;
+    width: 35px;
+    height: 35px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    color: rgb(255, 58, 206);
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+}
+
 .top {
     font-size: 20px;
     position: fixed;
     right: 20px;
     bottom: 20px;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     background: rgba(240, 164, 255, 0.5);
     /* border-radius: 50%; */
     color: #fff;
     text-decoration: none;
+    border-radius: 50%;
     cursor: pointer;
     text-align: center;
-    line-height: 30px;
+    line-height: 35px;
 }

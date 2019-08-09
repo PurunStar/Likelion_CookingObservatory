@@ -43,6 +43,66 @@
     <link rel="stylesheet" href="{% static 'css/default.css' %}">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
+
+    <style>
+        footer {
+            padding-bottom: 10vh;
+            padding-top: 30vh;
+        }
+
+        .footer {
+            width: 100%;
+            height: 120px;
+            display: -webkit-flex;
+            display: flex;
+        }
+
+        .item {
+            margin: 10px;
+            color: rgb(180, 151, 151);
+            font-size: 13px;
+            text-align: left;
+            line-height: 20px;
+        }
+
+        .item:nth-child(1) {
+            -webkit-flex: 3;
+            flex: 1;
+        }
+
+        .item:nth-child(2) {
+            -webkit-flex: 1;
+            flex: 2;
+        }
+
+        .item:nth-child(3) {
+            -webkit-flex: 1;
+            flex: 1;
+            text-align: right;
+        }
+
+        .item_b {
+            font-weight: bolder;
+            size: 15px;
+            line-height: 15px;
+        }
+
+        .top {
+            font-size: 20px;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 30px;
+            height: 30px;
+            background: rgba(240, 164, 255, 0.5);
+            /* border-radius: 50%; */
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -83,29 +143,32 @@
 
             <li class="slide1">
                 <div class="contents">
-                    <h3>Baking Baking Baking</h3>
-                    <h2>Baking Baking Baking</h2>
-                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
-                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
-                    <a href="" class="btn">Get Started</a>
+                    <h3>안녕하세요</h3>
+                    <h2>Baking Observatory입니다.</h2>
+                    <br>
+                    <h3>한지원 김은영 마서연 박효빈 강상혁</h3>
+                    <br>
+                    <a href="" class="btn">한표만줘</a>
                 </div>
             </li>
             <li class="slide2">
                 <div class="contents">
-                    <h3>Baking Baking Baking</h3>
-                    <h2>Baking Baking Baking</h2>
-                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
-                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
-                    <a href="" class="btn">Get Started</a>
+                    <h3>안녕하세요</h3>
+                    <h2>Baking Observatory입니다.</h2>
+                    <br>
+                    <h3>한지원 김은영 마서연 박효빈 강상혁</h3>
+                    <br>
+                    <a href="" class="btn">한표만줘</a>
                 </div>
             </li>
             <li class="slide3">
                 <div class="contents">
-                    <h3>Baking Baking Baking</h3>
-                    <h2>Baking Baking Baking</h2>
-                    <p>Baking Baking BakingBaking Baking BakingBaking Baking Baking
-                        Baking Baking BakingBaking Baking BakingBaking Baking Baking</p>
-                    <a href="" class="btn">Get Started</a>
+                    <h3>안녕하세요</h3>
+                    <h2>Baking Observatory입니다.</h2>
+                    <br>
+                    <h3>한지원 김은영 마서연 박효빈 강상혁</h3>
+                    <br>
+                    <a href="" class="btn">한표만줘</a>
                 </div>
             </li>
         </ul>
@@ -286,111 +349,34 @@
         </scetion>
         <!-- latest_projects -->
     </main>
-    <!-- <footer>
-        <div class="footer_top">
-            <div class="container clearfix">
-                <div class="col-one-forth">
-                    <h2 class="footer_logo"><a href="">footerlogo</a></h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae atque enim expedita nulla
-                        accusamus dolores nihil temporibus assumenda, nobis maiores officia a aut rerum, quo dolore,
-                        soluta at dolor reiciendis.
-                    </p>
 
-                </div>
-                <div class="col-one-forth">
-                    <h3>Recent Posts</h3>
-                    <ul class="footer_list">
-                        <li><span class="post_date">September 8 2015</span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consecaaaaetur adipisicing elit.
-                            </p>
-                        </li>
-                        <li><span class="post_date">September 8 2015</span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </li>
-                        <li><span class="post_date">September 8 2015</span>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-one-forth">
-                    <h3>Our Twitter</h3>
-                    <ul class="footer_list">
-                        <li>
-                            <p>
-                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
-                            </p>
-                            <span class="post_date">3mins 8 2015</span>
-                        </li>
-                        <li>
-                            <p>
-                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
-                            </p>
-                            <span class="post_date">3mins 8 2015</span>
-                        </li>
-                        <li>
-                            <p>
-                                <span class="twitter_id">id</span> aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa aaa
-                            </p>
-                            <span class="post_date">3mins 8 2015</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-one-forth">
-                    <h3>Dribble Widdget</h3>
-                    <ul class="dribble">
-                        <li><a href=""><img src="{% static 'images/dribble_01.jpg' %}" alt="dribble 01"></a></li>
-                        <li><a href=""><img src="{% static 'images/dribble_02.jpg' %}" alt="dribble 02"></a></li>
-                        <li><a href=""><img src="{% static 'images/dribble_03.jpg' %}" alt="dribble 03"></a></li>
-                        <li><a href=""><img src="{% static 'images/dribble_04.jpg' %}" alt="dribble 04"></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="footer_bottom">
+    <footer>
+        <div class="footer">
             <div class="item">
-                <img src='#' alt="사진">
+                <img src='../../static/images/lionbaking.jpg' style="width: 100px; height:100px;" alt="사진">
             </div>
             <div class="item">
-                <pre>
-                    <p>(주)팀이름 | 대표이사들 : 강상혁 김은영 마서연 박효빈 한지원 |</p>
-                    <p>주소 : 광주광역시 동구 필문대로 309 | 사업자등록번호:123456789 | 통신판매신고 : 132광주4752 |</p>
-                    <h6>copyright(c) 2019 all right reserved</h6>
-                </pre>
+                <p>
+
+                    (주)팀이름 | 대표이사들 : 강상혁 김은영 마서연 박효빈 한지원 |
+                    주소 : 광주광역시 동구 필문대로 309
+                    <br><br>
+                    사업자등록번호:123456789 | 통신판매신고 : 132광주4752 |
+                    <h7>copyright(c) 2019 all right reserved</h7>
+                </p>
             </div>
             <div class="item">
                 <div class='item_b'> BO SNS</div>
-                <p>유튜브 | 블로그 | 인스타그램</p>
+                유튜브 | 블로그 | 인스타그램
                 <div class='item_b'>고객센터</div>
-                <p>평일 : 9:00-18:30</p>   
+                평일 : 9:00-18:30
                 <div class='item_b'>1:1상담</div>
-                <p>누가할래?난 안해</p>
+                누가할래?난 안해
             </div>
         </div>
-<!-- 
-        <div class="footer_bottom">
-            <div class="container clearfix">
-                <div class="copy">
-                    <p>
-                        Copyright &copy; 2018 <span>Baking</span> <span class="devider">&#124;</span> <a
-                            href="">Privacy</a> <span class="devider">&#124;</span>
-                        <a href="">FAQ</a> <span class="devider">&#124;</span> <a href="">Support</a>
-                    </p>
-                </div>
-                <div class="designer">
-                    <p>
-                        Designed by <a href="">ThemeFire</a> <span class="devider">&#124;</span> Only on <a
-                            href="">Envato Market</a>
-                    </p>
-                </div>
-            </div>
-        </div> -->
+        <div><a href='#get-started' class="top">
+                <i class="fas fa-arrow-up"></i>
+            </a></div>
     </footer>
 </body>
 

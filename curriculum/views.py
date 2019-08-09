@@ -17,3 +17,6 @@ def landing_page(request):
 
 def lv1List(request):
     return render(request, 'lv1List.html')
+
+def timer(request):
+    return render(request, 'timer.html')

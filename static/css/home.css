@@ -36,15 +36,17 @@ header nav ul li a {
 
 header .logo a {
     width: 480px;
-    height: 450px;
+    height: 400px;
     background: url(../images/logo3.png) no-repeat;
     display: block;
     text-indent: -9999em;
     bottom: -250px;
+    margin-top: -50px;
 }
 
 .main-menu li {
     margin-right: 29px;
+    margin-top: 20px;
 }
 
 .main-menu li:last-child {
@@ -105,7 +107,7 @@ header nav ul li a.active {
     transform: translate(-50%, -50%);
     z-index: 110;
     color: #fff;
-    width: 590px
+    width: 700px
 }
 
 .slider-list li .contents h3 {
@@ -195,7 +197,8 @@ header nav ul li a.active {
 
 /* 애니메이션 이름이나 시간 정지상태는 다 같고 나타나는 타이밍만 다름 */
 .slider-list li .contents h3 {
-    animation-delay: 1.2s
+    animation-delay: 1.2s;
+    font-weight: 600;
 }
 
 .slider-list li .contents h2 {
