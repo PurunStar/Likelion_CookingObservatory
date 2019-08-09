@@ -1,0 +1,375 @@
+/* base */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    }
+
+html {
+    background: #0f0c29;  /* fallback for old browsers  #24243e */
+    background: -webkit-linear-gradient(to bottom, #0f0c29, #302b63, #3c395f, #471e4b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #3c395f,  #471e4b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size: cover; */
+}
+
+
+/* header */
+
+header {
+    font-size: 80px;
+    margin: 50px;
+    font-weight: 700;
+    text-align: center;
+}
+header > a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* main-image-silde */
+
+.main-pic-slide {
+    top:50px;
+}
+
+.main-img{
+    border-radius: 25px;
+    width: 70%;
+    height: 400px;
+    top: 300px; left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    background-size: 100% 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2017/07/28/14/29/macarons-2548827_1280.jpg');
+    animation: slider 20s infinite linear;
+}
+
+@keyframes slider {
+    0%{
+        /* background-size: 100% 100%; */
+        background-image: url('https://cdn.pixabay.com/photo/2017/07/28/14/29/macarons-2548827_1280.jpg');
+    }
+    25%{
+        background-image: url('https://cdn.pixabay.com/photo/2018/01/04/11/40/food-3060458_1280.jpg');
+        /* background-size: 100% 100%; */
+    }
+    50%{
+        background-image: url('https://cdn.pixabay.com/photo/2014/11/07/15/00/apple-pie-520646_1280.jpg');
+        /* background-size: 100% 100%; */
+    }
+    75%{background-image: url('https://cdn.pixabay.com/photo/2017/05/04/21/23/cupcakes-2285209_1280.jpg');
+        /* background-size: 100% 100%; */
+    }
+}
+
+
+/* program-info */
+
+.program-info-post {
+    width: 70%;
+    left: 50%;
+    /* top: 220px;  #if 주석을 해제->글이 슬라이드 아래쪽에 위치. else 해제X->슬라이드 하단부에 위치.*/
+    position: relative;
+
+    transform: translate(-50%, -50%);
+    color: #eee;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+}
+/* .c-wrapper {
+    text-align: center;
+    padding: 50px 100px;
+}
+.c-p {
+    width: 200px; height: 200px;
+    line-height: 200px;
+    margin: 20px 20px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(247, 233, 114);
+    color: aliceblue;
+    display: inline-block;
+} */
+
+
+/* level.1,2,3 circle */
+/* 이거 정렬 어떻게 해야할지 해결해야 함. */
+
+
+.circle-pic3-array{
+    text-align: center;
+}
+
+.c-wrapper {
+    margin-top: 100px;
+    width: 250px;
+    height: 250px;
+    padding: 0 50px;
+    display: inline-block;
+}
+
+
+
+.c-wrapper img {
+    width: 200px; height: 200px;
+}
+
+
+.c-out {
+    overflow: hidden;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    width: 200px; height: 200px;
+    
+}
+
+.c-Border {
+
+    border-radius: 50%;
+    position: absolute;
+    width: 150px; height: 150px;
+    border: 25px solid rgba(66, 66, 66, 0.5);
+    /* rgba(194, 214, 214, 0.5) */
+    top: 50%; left: 50%;
+    margin: -100px 0px 0px -100px;
+}
+
+.c-info {
+    position: absolute;
+    background: rgba(54, 11, 11, 0.7);
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+    top: 50%; left: -250px;
+    margin: -75px 0px 0px -75px;
+    text-align: center;
+    color: white;
+}
+
+.c-out:hover .c-info {
+    transition: all 0.5s ease-in-out;
+    left: 50%;
+}
+
+.c-info h1{
+    margin-top:20px;
+}
+
+.c-info span{
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+}
+
+.c-info p {
+    color: white;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.c-info a {
+    font-size: 10px;
+    color: white;
+}
+
+
+/* step detail */
+
+.step-detail .step1 {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding-bottom: 30px;
+    margin: 200px 15% 30px;
+}
+
+.step-detail .step2 {
+    margin: 30px 15% 30px;
+    background-color: rgba(68, 70, 189, 0.3);
+    padding-bottom: 30px;
+}
+
+.step-detail .step3 {
+    margin: 30px 15% 30px;
+    background-color: rgba(204, 98, 177, 0.1);
+    padding-bottom: 30px;
+}
+
+.step-detail h2 {
+    font-size: 2rem;
+    padding: 1% 90% 5% 1%;
+    color: #fff;
+}
+
+.step-detail p{
+    padding-left: 10%;
+    padding-right: 2%;
+    color: #fff;
+    padding-bottom: 1.5rem;
+}
+
+
+/* step-detail/listPic */
+/* image */
+
+.contain {
+    position: relative;
+    width: 20%; height: 20%;
+    display: inline-block;
+    margin-bottom: 3%;
+    /* padding-right: 10px;  */
+}
+
+.image {
+    width: 100%; height: 100%;
+    display: block;
+    /* background-color: rgb(214, 132, 132); */
+}
+
+.overlay {
+    position: absolute;
+    transition: all 0.3s ease;
+    opacity: 0;
+    background-color: #eee;
+}
+
+.contain:hover .overlay{
+    opacity: 1;
+}
+
+.text {
+    color: #fff;
+    position: absolute;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+/* .overlayLeft {
+    height: 100%; width: 0; top: 0; left: 0;
+    background-color: rgba(252, 236, 92, 0.5);
+}
+
+.overlayRight {
+    height: 100%; width: 0; top: 0; right: 0;
+    background-color: rgba(252, 164, 92, 0.5);
+
+
+}
+.contain:hover .overlayLeft, .contain:hover .overlayRight{
+    width: 100%;
+}
+
+
+
+.overlayTop {
+    width: 100%; height: 0; top: 0; left: 0;
+    background-color: rgba(92, 228, 252, 0.5);
+}
+
+.overlayBottom {
+    width: 100%; height: 0; bottom: 0; right: 0;
+    background-color: rgba(183, 252, 92, 0.5);
+
+
+}
+.contain:hover .overlayTop, .contain:hover .overlayBottom{
+    height: 100%;
+} */
+
+/* .overlayCross {
+    width: 0; height: 0; top: 0; left: 0;
+    background-color: rgba(252, 92, 92, 0.5);
+}
+.contain:hover .overlayCross{
+    width: 100%; height: 100%;
+} */
+
+.overlayFade {
+    width: 100%; height: 100%; top: 0; left: 0;
+    background-color: rgba(255, 184, 208, 0.5);
+}
+
+
+/* footer */
+
+footer {
+    padding-bottom: 10vh;
+    padding-top: 30vh;
+}
+
+.footer {
+    width: 100%;
+    height: 120px;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.item {
+    margin: 10px;
+    color: rgb(180, 151, 151);
+    font-size: 9px;
+    text-align: left;
+    line-height: 20px;
+}
+
+.item:nth-child(1) {
+    -webkit-flex: 3;
+    flex: 1;
+}
+
+.item:nth-child(2) {
+    -webkit-flex: 1;
+    flex: 2;
+}
+
+.item:nth-child(3) {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: right;
+}
+
+.item_b {
+    font-weight: bolder;
+    size: 15px;
+    line-height: 15px;
+}
+
+a.chat {
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 70px;
+    width: 35px;
+    height: 35px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    color: rgb(255, 58, 206);
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+}
+
+.top {
+    font-size: 20px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 35px;
+    height: 35px;
+    background: rgba(240, 164, 255, 0.5);
+    /* border-radius: 50%; */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 35px;
+}

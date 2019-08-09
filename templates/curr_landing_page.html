@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700&display=swap"
     rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/star.css'%}">
+    <link rel="stylesheet" href="{% static 'css/star.css' %}">
     <!-- <link rel="stylesheet" href="./animate.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://kit.fontawesome.com/9279b2b68a.js"></script>
@@ -84,10 +84,10 @@
             <div class="big-box wow animated fadeIn delay-2s" style="text-align: center;">
                 <div class="boxx">
                 <div  class= 'front'>
-                    <img src="{% static './../../static/images/Photofox.png' %}" alt="">
+                    <img src="{% static 'images/Photofox.png' %}" alt="">
                 </div>
                 <div class= 'back wow flash' data-wow-delay="2.5s" data-wow-iteration ='infinite'>
-                    <img src="{% static './../../static/images/7A90D66B-9DC7-440B-A440-071A03672144.png'%}" alt="">
+                    <img src="{% static 'images/7A90D66B-9DC7-440B-A440-071A03672144.png'%}" alt="">
                 </div>
             </div>
         </div>
@@ -106,11 +106,11 @@
         
         <div class='recipe'>
             <div class="time wow bounceInLeft" data-wow-duration='3s'>
-                <img src='{% static "./../../static/images/clock-with-white-face.png" %}' style=" margin-top:30px; width: 8%; height: 8%; visibility: visible;" >
+                <img src='{% static "images/clock-with-white-face.png" %}' style=" margin-top:30px; width: 8%; height: 8%; visibility: visible;" >
                     <p> 30 min</p><!-- 준비|요리|ready in 시간 으로 나눠야할까 고민.-->
             </div>
             <div class='ing-set wow bounceInRight' data-wow-duration='3s'>
-                <img src='{% static "./../../static/images/recipe-book.png" %}' style=" margin-top:80px; width: 8%; height: 8%; visibility: visible;">
+                <img src='{% static "images/recipe-book.png" %}' style=" margin-top:80px; width: 8%; height: 8%; visibility: visible;">
                 <h2>ingredients</h2>
                 <p class="ingredients" style=" padding-bottom: 80px;">
                         1 egg<br>
@@ -123,7 +123,7 @@
                 </p>
             </div>
             <div class="time wow bounceInLeft" data-wow-duration='3s' style='margin:50px 0px 100px;'>
-                <img src='{% static "./../../static/images/clock-with-white-face.png" %}' onclick="window.open('./timer.html')" style="width: 8%; height: 8%; visibility: visible;" >
+                <a href="{% url 'timer' %}"><img src='{% static "images/clock-with-white-face.png" %}' style="width: 8%; height: 8%; visibility: visible;" ></a>
                     <p>Timer</p>
             </div>
             <div class="h1-txt wow zoomIn">
@@ -136,7 +136,7 @@
             <ul>
                 <li>
                     <h3>step 1</h3>
-                    <img src="{% static './../../static/images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
+                    <img src="{% static 'images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
                     <div class="timeline-text">
                         <p><span>Preheat</span> the oven to <span>375F</span>(<span>190C</span>),<br>
                             half the flour mixture into the butter mixture until combined.<br><br>
@@ -145,7 +145,7 @@
                 </li>
                 <li>
                     <h3>step 2</h3>
-                    <img src="{% static './../../static/images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
+                    <img src="{% static 'images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
 
                     <div class="timeline-text">
                         <p>1 . 1 Beat butter and sugar in a large bowl until light and fluffy, about 3 minutes.
@@ -162,7 +162,7 @@
                 </li>
                 <li>
                     <h3>step 3</h3>
-                    <img src="{% static './../../static/images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
+                    <img src="{% static 'images/cupcakes-690040_1920.jpg'%}" alt="" class="img">
 
                     <div class="timeline-text">
                         <p>2 . 1 Place muffin cups on center rack of the preheated oven
@@ -186,7 +186,7 @@
         <footer>
                 <div class="footer">
                         <div class="item">
-                            <img src='{% url "./../../static/images/oat.png" %}' style="width: 100px; height:100px;" alt="사진">
+                            <img src='{% static "images/oat.png" %}' style="width: 100px; height:100px;" alt="사진">
                         </div>
                         <div class="item">
                             <pre>
@@ -205,9 +205,9 @@
                             누가할래?난 안해
                         </div>
                     </div>
-                <div><a href='#' class="chat">
-                    <i class="fas fa-arrow-up"></i>
-                </a></div>
+                <div><a href='http://pf.kakao.com/_yixdfT' class="chat">
+                        <i class="fas fa-headset"></i>
+                                    </a></div>
             <div><a href='#get-started' class="top">
                 <i class="fas fa-arrow-up"></i>
             </a></div>
