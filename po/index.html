@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+   
+		<title>Slideshow with Animated Circular </title>
+		<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	 
+	 <style>
+      body {
+    margin: 0;
+    padding: 0;
+    
+    color: #FFFFFF;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    
+  }
+ 
+   
+  body header {
+    background-color: transparent;
+    font-family: 'Oswald', sans-serif;
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 48px;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 90;
+  }
+div .border-box {
+width: 200px;
+height: 200px;
+float: right;
+padding: 10px;
+border: 5px solid white;
+  }
+
+  
+
+  
+  body header .header-inner {
+    padding: 12px 1.5%;
+  }
+
+  body header .header-inner .logo {
+    position: relative;
+    display: inline;
+    width: auto;
+    height: auto;
+    float: left;
+  }
+  body header .header-inner .logo a {
+    position: relative;
+    display: inline;
+    width: auto;
+    height: auto;
+    color: #FFFFFF;
+    outline: 0px none;
+    outline: 0px;
+    text-decoration: none;
+    transition: all 0.35s ease-in-out;
+    text-transform: uppercase;
+  }
+  body header .header-inner .logo a:hover {
+    color: rgba(255, 255, 255, 0.45);
+  }
+  body header .header-inner .logo a span {
+    font-weight: 700;
+  }
+ 
+  
+  
+  body header .header-inner nav {
+    position: relative;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-type-style: none;
+    float: right;
+  }
+
+  body header .header-inner nav li {
+    position: relative;
+    display: inline;
+    margin-left: 16px;
+  }
+ 
+  body header .header-inner nav li a {
+  font-family: 'Oswald', sans-serif;
+    position: relative;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-decoration: none;
+    line-height: 24px;
+    transition: all 0.35s ease-in-out;
+  }
+  
+  body header .header-inner nav li a span {
+    position: relative;
+    z-index: 2;
+  }
+  body header .header-inner nav li a:hover {
+    color: rgba(255, 255, 255, 0.45);
+  }
+  body section.slideshow {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    visibility: hidden;
+    overflow: hidden;
+  }
+  body section.slideshow ul.navigation {
+    position: absolute;
+    display: block;
+    width: 640px;
+    height: 640px;
+    padding: 0;
+    margin: 0;
+    left: -230px;
+    top: 50%;
+    margin-top: -320px;
+    z-index: 10;
+  }
+  
+  body section.slideshow ul.navigation li.navigation-item {
+    position: absolute;
+    display: inline-block;
+    overflow: hidden;
+    width: 120px;
+    height: 120px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: border 0.6s ease-in-out;
+  }
+  
+  body section.slideshow ul.navigation li.navigation-item .rotate-holder {
+    position: fixed;
+    display: block;
+    width: 0;
+    height: 0;
+    left: -9999px;
+    top: -9999px;
+  }
+  body section.slideshow ul.navigation li.navigation-item .background-holder {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;    
+    background-size: cover;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  }
+  body section.slideshow ul.navigation li.navigation-item:hover .background-holder {
+    opacity: 0.75;
+  }
+  body section.slideshow ul.navigation li.navigation-item.active .background-holder {
+    opacity: 0;
+    visibility: hidden;
+  }
+  body section.slideshow .detail {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 8;
+  }
+  body section.slideshow .detail .detail-item {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  body section.slideshow .detail .detail-item .headline {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: calc(100% - 480px);
+    height: 126px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+    white-space: nowrap;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+ 
+  body section.slideshow .detail .detail-item .headline .letter {
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    color: #FFFFFF;
+    font-size: 52px;
+    line-height: 110px;
+    font-weight: 900;
+    font-kerning: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+      text-transform: uppercase;
+  }
+  
+  body section.slideshow .detail .detail-item .background {
+    position: absolute;
+    display: block;
+    width: 100%;
+    width: calc(100% + 100px);
+    height: 100%;
+    height: calc(100% + 100px);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: visible;
+    background-repeat: no-repeat;
+    background-position: center center;     
+    background-size: cover;
+    z-index: 1;
+  }
+  body section.slideshow .detail .detail-item .background::before {
+    content: ""; 
+    background: linear-gradient(to right, black 0%, rgba(0, 0, 0, 0) 90%);   
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+      
+  }
+  body section.slideshow .detail .detail-item.active {
+    opacity: 1;
+    visibility: visible;
+  }
+      
+      </style>
+	 
+	 
+  </head>
+  <body>
+    
+    <section class="slideshow">
+ 
+      <ul class="navigation">
+ 
+        <li class="navigation-item active">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-1.jpg);"></span>
+        </li>
+        <!-- slideshow:navigation:item END -->
+
+        <!-- slideshow:navigation:item START -->
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/statue.jpg);"></span>
+        </li>
+       
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-3.jpg);"></span>
+        </li>
+       
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-4.jpg);"></span>
+        </li>
+      
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-5.jpg);"></span>
+        </li>
+      
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-6.jpg);"></span>
+        </li>
+        
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/hong.jpg);"></span>
+        </li>
+         
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-8.jpg);"></span>
+        </li>
+         
+        <li class="navigation-item">
+          <span class="rotate-holder"></span>
+          <span class="background-holder" style="background-image: url(assets/img/img-9.jpg);"></span>
+        </li>
+       
+
+      </ul>
+      
+      <div class="detail">
+       
+        <div class="detail-item active">
+          <div class="headline">Bakin Observatory</div>
+          <div class="border-box">Bakin Observatory</div>
+          <div class="background" style="background-image: url(assets/img/img-1.jpg); height: 100vh;"></div>
+          <div class="background" style="background-image: url(assets/img/img-1.jpg); height: 100vh; background-size: cover; background-position: center;"></div>
+        
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline"style="z-index: 2;">Level 소개</div>
+          <div class="background" style="background-image: url(assets/img/statue.jpg);  z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 750px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+      <p style="color:#FFFFFF;"></p>
+    </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline"style="z-index: 2;">Learn  </div>
+          <div class="background" style="background-image: url(assets/img/img-3.jpg); z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 750px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF;"></p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline"style="z-index: 2;">Follow me</div>
+          <div class="background" style="background-image: url(assets/img/img-4.jpg);z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 750px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF; text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px;  position:absolute; top:50%; left:50%; 
+            transform: translate(-50%, -50%);"></p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline"style="z-index: 2;">24 time service</div>
+          <div class="background" style="background-image: url(assets/img/img-5.jpg);z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 650px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF;text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px;  position:absolute; top:50%; left:50%; 
+            transform: translate(-50%, -50%);" >다양한 소식과 혜택/정보를 카카오톡을 통해서 24시간동안 상담원과 원활하게 소통이 가능합니다.</p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline"style="z-index: 2;">Reliability</div>
+          <div class="background" style="background-image: url(assets/img/img-6.jpg);z-index: 1;"></div> 
+          <div class="cb" style="position: relative;  width: 700px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF;text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px;  position:absolute; top:50%; left:50%; 
+            transform: translate(-50%, -50%);">검색창에 신뢰도를 알고 싶은 사이트의 주소(URL)을 입력 후, 확인 누르면 사이트 생성일, 서버 위치, 사업자 위치 등등 다양한 정보를 조회해서 그간의 이력등을 종합적으로 판단해 사이트의 신뢰도를 알려줍니다.</p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline" style="z-index: 2;">Noticey</div>
+          <div class="background" style="background-image: url(assets/img/hong.jpg);z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 750px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF;text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px;  position:absolute; top:50%; left:50%; 
+            transform: translate(-50%, -50%);">※핫 써머 핫세 세일중!!<br>※리뷰 우수고객당첨 할인<br> ※개인정보처리방침변경안내</p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline" style="z-index: 2;">Question </div>
+          <div class="background" style="background-image: url(assets/img/img-8.jpg);z-index: 1;"></div>
+          <div class="cb" style="position: relative;  width: 750px; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;">
+            <p style="color:#FFFFFF;text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px;  position:absolute; top:50%; left:50%; 
+            transform: translate(-50%, -50%);">※교환/반품 안내 <br> ※사용후기 적립금안내<br> ※제품문의 <p>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+        <!-- slideshow:details START -->
+        <div class="detail-item">
+          <div class="headline">Event </div>
+          <div class="background" style="background-image: url(assets/img/img-9.jpg);z-index: 1;"></div>
+          <div class="cb"  style="position: relative;  width: 50%; height: 500px; float: right; top:15%; margin-right: 8%; z-index: 3; border: 2px solid white;" >
+            <div style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);">
+              <img src='./../2x/Event.png' style="width:100px; height:100px; margin: 0 30%;"  >
+            <p style="color:#FFFFFF;text-align: center; font-family: 'Courier New', Courier, monospace; font-size:30px; ">좋아요 많이 눌린 순서대로 최신글에 올라가기 떄문에 조회수가 올라가고 좋아요를 많이 받을수록 등급이 올라가 할인 혜택을 받을수도 있습니다. </p></div>
+          </div>
+        </div>
+        <!-- slideshow:details END -->
+        
+      </div>
+      <!-- slideshow:details END -->
+
+    </section>
+    <!-- slideshow END -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/plugins/TextPlugin.min.js"></script>
+    <script src="assets/js/demo.js"></script>
+
+  </body>
+</html>
