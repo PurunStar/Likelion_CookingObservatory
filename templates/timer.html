@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>baking-timer</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            /* font-family:  */
+        }
+        html, body {
+            height: 100%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background: rgb(113, 154, 182);
+        }
+        header {
+            width: 100%;
+            height: 13vh;
+            background-color: #ffffff;
+            color: #00a9f6;
+            text-transform: uppercase;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            height: 60vh;
+            font-size: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .content #seconds {
+            width: 250px;
+            font-size: 2rem;
+            padding: 1rem;
+            outline: none;
+            background: none;
+            border: none;
+            border-bottom: 3px solid #fff;
+            color: #fff;
+        }
+        #seconds::placeholder {
+            color: #ddd;
+            font-size: 1.7rem;
+            text-align: center;
+
+        }
+        .btn {
+            background-color: #fff;
+            margin-top: 2rem;
+            /* margin-left: 1rem; */
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0.8rem 1.7rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            float: left;
+        }
+        
+        .start {
+            color: rgb(0, 201, 17);
+        }
+        .stop {
+            color: #e00;
+        }
+        #start, #continue, #stop {
+            display: none;
+        }
+        .counter{
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+        #reset{
+            margin-left: 1rem;
+        }
+    </style>
+    
+</head>
+<body>
+    <header><h1>timer</h1></header>
+    <!-- <script type="text/javascript" src="../static/js/timer.js"></script> -->
+    <div class="content">
+        <div class="counter"></div>
+        <input type="number" id="seconds" placeholder="Seconds">
+        <div class="buttons">
+            <button class="btn start" id='start' value="1" onclick="check(this)">start</button>
+            <button class="btn start" id='continue' value="1" onclick="check(this)">continue</button>
+            <button class="btn stop" id='stop' value="0" onclick="check(this)">stop</button>
+            <button class="btn start" id='ok' onclick="toSubmit()">submit!</button>
+            <button class="btn reset" id='reset' onclick="toReset()">reset</button>
+
+        </div>
+    </div>
+    <!-- javascript START -->
+    <script>
+        const container = document.querySelector('.counter');
+const buttonDiv = document.querySelector('.buttons');
+const secInput = document.getElementById('seconds');
+
+var seconds;
+var remseconds;
+var minuts;
+var toCount = false;
+
+function toSubmit() {
+    display('start');
+    display('reset');
+    remove('seconds');
+    remove('ok');
+    seconds = Number(secInput.value);
+    counting();
+}
+function display(e) {
+    document.getElementById(e).style.display = 'block';
+}
+function remove(e) {
+    document.getElementById(e).style.display = 'none';
+}
+function check(stat){
+    toCount =  stat.value;
+    if(stat.id == 'start'){
+        display('stop');
+        remove('start');
+        display('reset');
+    }
+    else if(stat.id =='stop'){
+        display('continue');
+        remove('stop');
+        display('reset');
+    }
+    else{
+        display('stop');
+        remove('continue');
+        display('reset');
+    }
+}
+function toReset(){
+    location.href="{% url 'timer' %}";
+}
+function count(){
+    if (seconds > 0) {
+        if (toCount == true) {
+            seconds--;
+            remseconds =seconds % 60;
+            minuts = Math.floor(seconds / 60);
+            if(minuts < 10){
+                minuts = '0'+ minuts;
+            }
+            if(remseconds < 10){
+                remseconds = '0'+ remseconds;
+            }
+            container.innerHTML = minuts + ':' + remseconds;
+        }
+    }
+    else {
+        container.innerHTML = 'TIME OUT!';
+        buttonDiv.style.opacity = '1';
+        remove('stop');
+        display('reset');
+    }
+}
+function counting(){
+    remseconds =seconds % 60;
+    minuts = Math.floor(seconds / 60);
+    if(minuts < 10){
+        minuts = '0'+ minuts;
+    }
+    if(remseconds < 10){
+        remseconds = '0'+ remseconds;
+    }
+    container.innerHTML = minuts + ':' + remseconds;
+    setInterval(count, 1000);
+
+}
+    </script>
+
+
+</body>
+</html>
